@@ -1,0 +1,410 @@
+[gd_scene load_steps=5 format=3 uid="uid://djq3e1h0wsnap"]
+
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_ig7tw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_ig7tw"]
+sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
+
+[sub_resource type="Environment" id="Environment_0xm2m"]
+background_mode = 2
+sky = SubResource("Sky_ig7tw")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0xm2m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-4.1075264e-08, -0.93969274, -0.34202015, 0.8660254, -0.1710101, 0.4698463, -0.50000006, -0.29619813, 0.8137978, 225.90001, 236.29999, -0.9999695)
+shadow_enabled = true
+
+[node name="floor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -88.30002)
+use_collision = true
+size = Vector3(303, 1, 252.1)
+
+[node name="ProtoController" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+can_freefly = true
+jump_velocity = 10.0
+sprint_speed = 20.0
+input_left = "move_left"
+input_right = "move_right"
+input_forward = "move_up"
+input_back = "move_down"
+input_jump = "jump"
+
+[node name="candy corn mountain" type="Node3D" parent="."]
+transform = Transform3D(24, 0, 0, 0, 48, 0, 0, 0, 20, 75.6, 0.60000026, -80.200005)
+
+[node name="combiner" type="CSGCombiner3D" parent="candy corn mountain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.7000003, 56.300003)
+use_collision = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="candy corn mountain/combiner"]
+transform = Transform3D(1, 0, 0, 0, 0.96000004, 0, 0, 0, 1, -3.2000003, 2.641407, -57.498734)
+use_collision = true
+radius = 1.7
+radial_segments = 30
+rings = 20
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="candy corn mountain/combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 1.75, -56.100002)
+operation = 2
+size = Vector3(3.8, 1.7, 4.2000003)
+
+[node name="gumdrop" type="Node3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6, 0.60000026, -68.4)
+
+[node name="gumdrop combiner" type="CSGCombiner3D" parent="gumdrop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.7000003, 56.300003)
+use_collision = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="gumdrop/gumdrop combiner"]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 2.641407, -56.20372)
+use_collision = true
+radius = 1.4
+radial_segments = 20
+rings = 15
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="gumdrop/gumdrop combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 1.75, -56.100002)
+operation = 2
+size = Vector3(3.8, 1.7, 4.2000003)
+
+[node name="gumdrop2" type="Node3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 12.799999, 0.60000026, -68.50001)
+
+[node name="gumdrop combiner" type="CSGCombiner3D" parent="gumdrop2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.7000003, 56.300003)
+use_collision = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="gumdrop2/gumdrop combiner"]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 2.641407, -56.20372)
+use_collision = true
+radius = 1.4
+radial_segments = 20
+rings = 15
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="gumdrop2/gumdrop combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 1.75, -56.100002)
+operation = 2
+size = Vector3(3.8, 1.7, 4.2000003)
+
+[node name="gumdrop3" type="Node3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 22.2, 0.60000026, -71.100006)
+
+[node name="gumdrop combiner" type="CSGCombiner3D" parent="gumdrop3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.7000003, 56.300003)
+use_collision = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="gumdrop3/gumdrop combiner"]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 2.641407, -56.20372)
+use_collision = true
+radius = 1.4
+radial_segments = 20
+rings = 15
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="gumdrop3/gumdrop combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 1.75, -56.100002)
+operation = 2
+size = Vector3(3.8, 1.7, 4.2000003)
+
+[node name="gumdrop4" type="Node3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 37.999996, 0.60000026, -75.9)
+
+[node name="gumdrop combiner" type="CSGCombiner3D" parent="gumdrop4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.7000003, 56.300003)
+use_collision = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="gumdrop4/gumdrop combiner"]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, -1.000001, 2.641407, -56.443726)
+use_collision = true
+radius = 1.4
+radial_segments = 20
+rings = 13
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="gumdrop4/gumdrop combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 1.75, -56.100002)
+operation = 2
+size = Vector3(3.8, 1.7, 4.2000003)
+
+[node name="peppermint patties" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.61129, 9.638446, -87.59475)
+use_collision = true
+
+[node name="peppermint" type="CSGCylinder3D" parent="peppermint patties"]
+use_collision = true
+radius = 5.7000003
+height = 2.2
+sides = 26
+
+[node name="peppermint2" type="CSGCylinder3D" parent="peppermint patties"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0999985, 2.9000006, -13.5)
+use_collision = true
+radius = 5.7000003
+height = 2.2
+sides = 26
+
+[node name="peppermint3" type="CSGCylinder3D" parent="peppermint patties"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 5.9000006, -27.599998)
+use_collision = true
+radius = 5.7000003
+height = 2.2
+sides = 26
+
+[node name="peppermint4" type="CSGCylinder3D" parent="peppermint patties"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8999977, 8.900001, -39.800003)
+use_collision = true
+radius = 5.7000003
+height = 2.2
+sides = 26
+
+[node name="peppermint5" type="CSGCylinder3D" parent="peppermint patties"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.299995, 11.900001, -49.200005)
+use_collision = true
+radius = 5.7000003
+height = 2.2
+sides = 26
+
+[node name="peppermint6" type="CSGCylinder3D" parent="peppermint patties"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.299995, 14.900001, -54.6)
+use_collision = true
+radius = 5.7000003
+height = 2.2
+sides = 26
+
+[node name="lollipops" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3112955, 24.538446, -142.19475)
+use_collision = true
+
+[node name="lollipop" type="CSGCombiner3D" parent="lollipops"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.611296, -0.60723495, -1.8856964)
+use_collision = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="lollipops/lollipop"]
+radius = 5.7000003
+radial_segments = 18
+rings = 15
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lollipops/lollipop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.081211, -0.033432007)
+height = 18.5
+
+[node name="lollipop2" type="CSGCombiner3D" parent="lollipops"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -22.611298, -5.607237, -1.8856964)
+use_collision = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="lollipops/lollipop2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87499905, 0, 0)
+radius = 5.7000003
+radial_segments = 18
+rings = 15
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lollipops/lollipop2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.081211, -0.033432007)
+height = 18.5
+
+[node name="lollipop3" type="CSGCombiner3D" parent="lollipops"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -33.811295, -3.9072342, 3.5142975)
+use_collision = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="lollipops/lollipop3"]
+radius = 5.7000003
+radial_segments = 18
+rings = 15
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lollipops/lollipop3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.081211, -0.033432007)
+height = 18.5
+
+[node name="lollipop4" type="CSGCombiner3D" parent="lollipops"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -48.611294, 1.392765, 9.0142975)
+use_collision = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="lollipops/lollipop4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.72727203, 0, 0)
+radius = 5.7000003
+radial_segments = 18
+rings = 15
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lollipops/lollipop4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.081211, -0.033432007)
+height = 18.5
+
+[node name="lollipop5" type="CSGCombiner3D" parent="lollipops"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.811295, -0.60723495, 18.914307)
+use_collision = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="lollipops/lollipop5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.70000076, 0, 0)
+radius = 5.7000003
+radial_segments = 18
+rings = 15
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lollipops/lollipop5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.081211, -0.033432007)
+height = 18.5
+
+[node name="lollipop6" type="CSGCombiner3D" parent="lollipops"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -61.711296, -5.407236, 32.114296)
+use_collision = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="lollipops/lollipop6"]
+radius = 5.7000003
+radial_segments = 18
+rings = 15
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lollipops/lollipop6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.081211, -0.033432007)
+height = 18.5
+
+[node name="lollipop7" type="CSGCombiner3D" parent="lollipops"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -67.5113, -12.607236, 37.214302)
+use_collision = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="lollipops/lollipop7"]
+radius = 5.7000003
+radial_segments = 18
+rings = 15
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lollipops/lollipop7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.081211, -0.033432007)
+height = 18.5
+
+[node name="lollipop8" type="CSGCombiner3D" parent="lollipops"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -61.0113, -7.8072357, 42.714302)
+use_collision = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="lollipops/lollipop8"]
+radius = 5.7000003
+radial_segments = 18
+rings = 15
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lollipops/lollipop8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.081211, -0.033432007)
+height = 18.5
+
+[node name="lollipop9" type="CSGCombiner3D" parent="lollipops"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -64.1113, -5.7072353, 52.214302)
+use_collision = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="lollipops/lollipop9"]
+radius = 5.7000003
+radial_segments = 18
+rings = 15
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lollipops/lollipop9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.081211, -0.033432007)
+height = 18.5
+
+[node name="lollipop10" type="CSGCombiner3D" parent="lollipops"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -61.911297, -5.907236, 62.214302)
+use_collision = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="lollipops/lollipop10"]
+radius = 5.7000003
+radial_segments = 18
+rings = 15
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lollipops/lollipop10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.081211, -0.033432007)
+height = 18.5
+
+[node name="lollipop11" type="CSGCombiner3D" parent="lollipops"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.611298, -1.4072361, 63.8143)
+use_collision = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="lollipops/lollipop11"]
+radius = 5.7000003
+radial_segments = 18
+rings = 15
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lollipops/lollipop11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.081211, -0.033432007)
+height = 18.5
+
+[node name="donuts" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="donut" type="CSGTorus3D" parent="donuts"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -26.4, 22.182507, -71)
+use_collision = true
+outer_radius = 1.2
+sides = 25
+ring_sides = 18
+
+[node name="donut2" type="CSGTorus3D" parent="donuts"]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -10.299999, 25.982506, -64.600006)
+use_collision = true
+outer_radius = 1.2
+sides = 25
+ring_sides = 18
+
+[node name="donut3" type="CSGTorus3D" parent="donuts"]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 7.8000016, 30.782505, -64.90001)
+use_collision = true
+outer_radius = 1.2
+sides = 25
+ring_sides = 18
+
+[node name="donut4" type="CSGTorus3D" parent="donuts"]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 29, 35.382504, -73.00001)
+use_collision = true
+outer_radius = 1.2
+sides = 25
+ring_sides = 18
+
+[node name="chocolate" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="chocolate bar" type="CSGBox3D" parent="chocolate"]
+transform = Transform3D(0.9396926, -0.11697781, -0.3213938, 3.405773e-08, 0.939693, -0.34202015, 0.3420203, 0.32139388, 0.8830225, 34.77062, 40.292656, -87.1242)
+use_collision = true
+size = Vector3(8.3, 1, 18.5)
+
+[node name="chocolate bar2" type="CSGBox3D" parent="chocolate"]
+transform = Transform3D(0.93969256, -0.059391193, -0.33682415, 0, 0.9848081, -0.17364822, 0.3420201, 0.16317597, 0.92541677, 44.070618, 45.792652, -105.0242)
+use_collision = true
+size = Vector3(8.3, 1, 18.5)
+
+[node name="chocolate bar3" type="CSGBox3D" parent="chocolate"]
+transform = Transform3D(0.7660444, 0.11161893, 0.63302237, 0, 0.9848081, -0.17364822, -0.6427875, 0.13302226, 0.7544067, 37.370617, 49.39265, -123.0242)
+use_collision = true
+size = Vector3(8.3, 1, 18.5)
+
+[node name="chocolate bar4" type="CSGBox3D" parent="chocolate"]
+transform = Transform3D(0.49999988, 0.15038379, 0.85286844, 0, 0.9848081, -0.17364818, -0.86602515, 0.08682412, 0.49240384, 22.970617, 53.492653, -136.4242)
+use_collision = true
+size = Vector3(8.3, 1, 18.5)
+
+[node name="chocolate bar5" type="CSGBox3D" parent="chocolate"]
+transform = Transform3D(5.9604645e-08, 0.17364825, 0.9848076, 0, 0.9848081, -0.17364818, -0.9999999, 1.4901161e-08, 0, 3.7706175, 58.692654, -142.3242)
+use_collision = true
+size = Vector3(8.3, 1, 18.5)
+
+[node name="chocolate bar6" type="CSGBox3D" parent="chocolate"]
+transform = Transform3D(-0.6427874, 0.13302226, 0.75440633, 2.0779433e-16, 0.984808, -0.17364815, -0.7660444, -0.11161891, -0.63302207, -15.029384, 63.192654, -133.1242)
+use_collision = true
+size = Vector3(8.3, 1, 18.5)
+
+[node name="chocolate bar7" type="CSGBox3D" parent="chocolate"]
+transform = Transform3D(-0.8660252, 0.086824134, 0.49240375, 5.7074754e-09, 0.984808, -0.17364815, -0.5, -0.15038377, -0.8528683, -28.529385, 67.99265, -118.82421)
+use_collision = true
+size = Vector3(8.3, 1, 18.5)
+
+[node name="chocolate bar8" type="CSGBox3D" parent="chocolate"]
+transform = Transform3D(-4.371138e-08, 0, -0.99999964, 0, 1.0000002, 0, 0.9999998, 0, -4.3711374e-08, -22.729382, 70.69265, -104.72421)
+use_collision = true
+size = Vector3(8.3, 1, 18.5)
+
+[node name="treasure box" type="CSGBox3D" parent="."]
+transform = Transform3D(0.8528685, 0.17364818, -0.49240386, -0.15038373, 0.9848077, 0.08682409, 0.5, 0, 0.8660254, 1.8, 76.1, -104.299995)
+use_collision = true
+size = Vector3(1.5, 1, 1)
