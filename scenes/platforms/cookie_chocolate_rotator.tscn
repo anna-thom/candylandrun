@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyqh17t7rdpv5"]
+
+[ext_resource type="PackedScene" uid="uid://bgmoo2k0g5bvs" path="res://assets/models/cookie/cookie-chocolate.glb" id="1_m3y2e"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_uhvti"]
+height = 4.6000004
+radius = 5.0
+
+[node name="CookieChocolateRotator" type="AnimatableBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, 0)
+shape = SubResource("CylinderShape3D_uhvti")
+
+[node name="cookie-chocolate2" parent="." instance=ExtResource("1_m3y2e")]

@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dxg5tur3jd17"]
+
+[resource]
+resource_name = "white"
+cull_mode = 2
+albedo_color = Color(1, 0.9927555, 0.93670386, 1)
+roughness = 0.5
+rim_enabled = true
+rim = 0.3
+rim_tint = 0.1
+clearcoat_enabled = true
+clearcoat = 0.5
+clearcoat_roughness = 0.4
