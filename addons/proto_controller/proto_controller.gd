@@ -3,6 +3,7 @@
 # Intended for rapid prototyping of first-person games.
 # Happy prototyping!
 
+class_name Player
 extends CharacterBody3D
 
 ## Can we move around?
@@ -15,6 +16,8 @@ extends CharacterBody3D
 @export var can_sprint : bool = false
 ## Can we press to enter freefly mode (noclip)?
 @export var can_freefly : bool = false
+
+@export var gravity_scale: float = 3.
 
 @export_group("Speeds")
 ## Look around rotation speed.
@@ -88,7 +91,7 @@ func _physics_process(delta: float) -> void:
 	# Apply gravity to velocity
 	if has_gravity:
 		if not is_on_floor():
-			velocity += get_gravity() * delta
+			velocity += get_gravity() * delta * gravity_scale
 
 	# Apply jumping
 	if can_jump:
