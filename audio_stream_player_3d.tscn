@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://sujjvbc2wm85"]
+
+[ext_resource type="AudioStream" uid="uid://ba3qngksmwbe7" path="res://christmas-piano-music-250831.mp3" id="1_01cpp"]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_01cpp")
+autoplay = true
