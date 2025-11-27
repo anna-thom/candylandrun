@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dybqi65hqlj1t"]
+
+[ext_resource type="PackedScene" uid="uid://cuhtxphe3cwnp" path="res://assets/models/HolidayKit/gingerbread-woman.glb" id="1_0hgrd"]
+
+[node name="GingerbreadWomanRoot" type="Node3D"]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 0, 0)
+
+[node name="gingerbread-woman2" parent="." instance=ExtResource("1_0hgrd")]

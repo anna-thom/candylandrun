@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctp5j0mwufud4"]
+
+[ext_resource type="PackedScene" uid="uid://k01arulaxia2" path="res://assets/models/HolidayKit/snowman-hat.glb" id="1_2xg12"]
+
+[node name="SnowmanHatRoot" type="Node3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="snowman-hat2" parent="." instance=ExtResource("1_2xg12")]

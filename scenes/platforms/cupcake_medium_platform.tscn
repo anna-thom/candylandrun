@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://de651j1ouok0a"]
+
+[ext_resource type="PackedScene" uid="uid://bhedptnun8cbp" path="res://scenes/platforms/cupcake_platform.tscn" id="1_wgda1"]
+
+[node name="CupcakePlatformRoot" instance=ExtResource("1_wgda1")]
+transform = Transform3D(14, 0, 0, 0, 14, 0, 0, 0, 14, 0, 0, 0)

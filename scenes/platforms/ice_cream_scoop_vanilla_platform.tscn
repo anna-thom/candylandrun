@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://4gd3xoq52pam"]
+
+[ext_resource type="PackedScene" uid="uid://cmrwvybaqirc7" path="res://scenes/platforms/ice_cream_scoop_mint_platform.tscn" id="1_ysild"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s05eo"]
+albedo_color = Color(0.98, 0.86534005, 0.71540004, 1)
+
+[node name="IceCreamScoopMintPlatformRoot" instance=ExtResource("1_ysild")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="ice-cream-scoop-mint" parent="ice-cream-scoop-mint2" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_s05eo")
+
+[editable path="ice-cream-scoop-mint2"]

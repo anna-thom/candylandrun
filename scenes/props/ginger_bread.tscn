@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dknrrqi3j7di3"]
+
+[ext_resource type="PackedScene" uid="uid://dbr60xqiubrgj" path="res://assets/models/FoodKit/ginger-bread.glb" id="1_82e25"]
+
+[node name="GingerBreadRoot" type="Node3D"]
+transform = Transform3D(-3.934025e-07, 9, 0, -9, -3.934025e-07, 0, 0, 0, 9, 0, 1, 0)
+
+[node name="ginger-bread2" parent="." instance=ExtResource("1_82e25")]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8u1aimmgqfqw"]
+
+[ext_resource type="PackedScene" uid="uid://cprbp5ki14ctc" path="res://assets/models/FoodKit/waffle.glb" id="1_wr5y6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wr5y6"]
+size = Vector3(0.3203125, 0.040075682, 0.32226563)
+
+[node name="WafflePlatformRoot" type="Node3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="waffle2" parent="." instance=ExtResource("1_wr5y6")]
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.020123288, 0)
+shape = SubResource("BoxShape3D_wr5y6")

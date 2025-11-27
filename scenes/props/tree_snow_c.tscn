@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsee4b8lgg8xd"]
+
+[ext_resource type="PackedScene" uid="uid://b0kb1gh2jge2f" path="res://assets/models/HolidayKit/tree-snow-c.glb" id="1_a66lx"]
+
+[node name="TreeSnowCRoot" type="Node3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="tree-snow-c2" parent="." instance=ExtResource("1_a66lx")]

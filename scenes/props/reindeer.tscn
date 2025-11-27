@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d38lk7fp2qff3"]
+
+[ext_resource type="PackedScene" uid="uid://caic8gjbaghkr" path="res://assets/models/HolidayKit/reindeer.glb" id="1_dcvq7"]
+
+[node name="ReindeerRoot" type="Node3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="reindeer2" parent="." instance=ExtResource("1_dcvq7")]

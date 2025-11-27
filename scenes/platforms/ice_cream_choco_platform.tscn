@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs5pksw6xev68"]
+
+[ext_resource type="PackedScene" uid="uid://lgnjbw6gps88" path="res://scenes/platforms/ice_cream_vanilla_platform.tscn" id="1_ifkra"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifkra"]
+albedo_color = Color(0.42, 0.21839999, 0.016800009, 1)
+
+[node name="IceCreamPlatformRoot" instance=ExtResource("1_ifkra")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0, 0)
+
+[node name="Group" parent="ice-cream2/ice-cream" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ifkra")
+
+[editable path="ice-cream2"]

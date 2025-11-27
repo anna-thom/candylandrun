@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceaq7j32a4p8q"]
+
+[ext_resource type="PackedScene" uid="uid://uj1fjjiphae7" path="res://assets/models/HolidayKit/gingerbread-man.glb" id="1_rpkhi"]
+
+[node name="GingerbreadManRoot" type="Node3D"]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 0, 0)
+
+[node name="gingerbread-man2" parent="." instance=ExtResource("1_rpkhi")]

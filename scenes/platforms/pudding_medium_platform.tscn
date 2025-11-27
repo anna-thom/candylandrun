@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4vewcctkqrwb"]
+
+[ext_resource type="PackedScene" uid="uid://c1fl46q7vlcdh" path="res://scenes/platforms/pudding_platform.tscn" id="1_o0dsb"]
+
+[node name="PuddingPlatformRoot" instance=ExtResource("1_o0dsb")]
+transform = Transform3D(24, 0, 0, 0, 24, 0, 0, 0, 24, 0, 0, 0)

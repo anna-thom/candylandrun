@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://td8c7ltoqpo3"]
+
+[ext_resource type="PackedScene" uid="uid://ddj12cuujmm8f" path="res://assets/models/HolidayKit/present-b-cube.glb" id="1_m2qj5"]
+
+[node name="PresentGreenCubeRoot" type="Node3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="present-b-cube2" parent="." instance=ExtResource("1_m2qj5")]

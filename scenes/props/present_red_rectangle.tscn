@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgc55r3al4ycx"]
+
+[ext_resource type="PackedScene" uid="uid://b0c0vfq4nq6sw" path="res://assets/models/HolidayKit/present-a-rectangle.glb" id="1_w53na"]
+
+[node name="PresentRedRectangleRoot" type="Node3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="present-a-rectangle2" parent="." instance=ExtResource("1_w53na")]

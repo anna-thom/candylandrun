@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://t5b3u18cqnnw"]
+
+[ext_resource type="PackedScene" uid="uid://biwdmnskwklhv" path="res://assets/models/HolidayKit/snow-pile.glb" id="1_eyovl"]
+
+[node name="SnowPileRoot" type="Node3D"]
+
+[node name="snow-pile2" parent="." instance=ExtResource("1_eyovl")]

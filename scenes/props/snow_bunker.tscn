@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnj4khwhhopnq"]
+
+[ext_resource type="PackedScene" uid="uid://c3l64fb208tix" path="res://assets/models/HolidayKit/snow-bunker.glb" id="1_b7atk"]
+
+[node name="SnowBunkerRoot" type="Node3D"]
+
+[node name="snow-bunker2" parent="." instance=ExtResource("1_b7atk")]

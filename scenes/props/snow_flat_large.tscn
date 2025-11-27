@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://doceb45ovx786"]
+
+[ext_resource type="PackedScene" uid="uid://bbtpgv31nd4ix" path="res://assets/models/HolidayKit/snow-flat-large.glb" id="1_4ugdy"]
+
+[node name="SnowFlatLargeRoot" type="Node3D"]
+
+[node name="snow-flat-large2" parent="." instance=ExtResource("1_4ugdy")]

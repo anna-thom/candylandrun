@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgcy02mf1grue"]
+
+[ext_resource type="PackedScene" uid="uid://d85qrwiqanb4" path="res://assets/models/HolidayKit/candy-cane-red.glb" id="1_4qsqv"]
+
+[node name="CandyCaneRedRoot" type="Node3D"]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 0, 0)
+
+[node name="candy-cane-red2" parent="." instance=ExtResource("1_4qsqv")]

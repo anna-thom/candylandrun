@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cccn5a6xtgdpy"]
+
+[ext_resource type="PackedScene" uid="uid://cr2564npqltqe" path="res://assets/models/FoodKit/cake.glb" id="1_kw3xe"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3putg"]
+height = 0.24013671
+radius = 0.32080078
+
+[node name="CakeRoot" type="Node3D"]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
+
+[node name="cake" parent="." instance=ExtResource("1_kw3xe")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0013263971, 0.12006836, 0)
+shape = SubResource("CylinderShape3D_3putg")

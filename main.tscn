@@ -1,11 +1,55 @@
-[gd_scene load_steps=13 format=3 uid="uid://djq3e1h0wsnap"]
+[gd_scene load_steps=52 format=3 uid="uid://djq3e1h0wsnap"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://ckwww5wcyeyd2" path="res://scenes/level/candy_corn.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://c3jb1x43ofj5c" path="res://scenes/platforms/cookie_rotator.tscn" id="3_h2yge"]
-[ext_resource type="PackedScene" uid="uid://bqnirmrofdpn4" path="res://scenes/platforms/donut_lift.tscn" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://dyqh17t7rdpv5" path="res://scenes/platforms/cookie_chocolate_rotator.tscn" id="4_lquwl"]
 [ext_resource type="Texture2D" uid="uid://c4gsh87krilvw" path="res://addons/kenney_particle_pack/smoke_01.png" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://ckwww5wcyeyd2" path="res://scenes/level/candy_corn.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cccn5a6xtgdpy" path="res://scenes/platforms/cake_platform.tscn" id="3_074og"]
+[ext_resource type="PackedScene" uid="uid://cuwqy2i24ql6j" path="res://scenes/platforms/candy_bar_platform.tscn" id="4_cegan"]
+[ext_resource type="PackedScene" uid="uid://bhxb4qol3j1cb" path="res://scenes/platforms/chocolate_platform.tscn" id="5_82xsv"]
+[ext_resource type="PackedScene" uid="uid://7s45kqxxuvsg" path="res://scenes/platforms/cookie_chocolate_platform.tscn" id="6_getpj"]
+[ext_resource type="PackedScene" uid="uid://bij2iljjnejke" path="res://scenes/platforms/cookie_platform.tscn" id="7_ryguw"]
+[ext_resource type="PackedScene" uid="uid://bhedptnun8cbp" path="res://scenes/platforms/cupcake_platform.tscn" id="8_d13ii"]
+[ext_resource type="PackedScene" uid="uid://dm0em58p8lna5" path="res://scenes/platforms/donut_chocolate_platform.tscn" id="9_1u8w0"]
+[ext_resource type="PackedScene" uid="uid://du8jpag41adwq" path="res://scenes/platforms/donut_platform.tscn" id="10_0odxb"]
+[ext_resource type="PackedScene" uid="uid://c6f4ny0vbndeg" path="res://scenes/platforms/donut_sprinkles_platform.tscn" id="11_lswn8"]
+[ext_resource type="PackedScene" uid="uid://bpyddi5qxt6n8" path="res://scenes/platforms/ice_cream_platform.tscn" id="12_a6jrf"]
+[ext_resource type="PackedScene" uid="uid://c4hp8i1q4le26" path="res://scenes/platforms/ice_cream_scoop_choco_platform.tscn" id="13_xuqvo"]
+[ext_resource type="PackedScene" uid="uid://cmrwvybaqirc7" path="res://scenes/platforms/ice_cream_scoop_mint_platform.tscn" id="14_qsp4k"]
+[ext_resource type="PackedScene" uid="uid://c1fl46q7vlcdh" path="res://scenes/platforms/pudding_platform.tscn" id="15_kq58d"]
+[ext_resource type="PackedScene" uid="uid://dnegokoe0dsib" path="res://scenes/platforms/sundae_platform.tscn" id="16_seu75"]
+[ext_resource type="PackedScene" uid="uid://c8u1aimmgqfqw" path="res://scenes/platforms/waffle_platform.tscn" id="17_htxhm"]
+[ext_resource type="PackedScene" uid="uid://c7args2qt0f8v" path="res://scenes/platforms/nutcracker_platform.tscn" id="18_f6a44"]
+[ext_resource type="PackedScene" uid="uid://d113v07aekqqk" path="res://scenes/platforms/snowman_platform.tscn" id="19_0cbny"]
+[ext_resource type="PackedScene" uid="uid://lgnjbw6gps88" path="res://scenes/platforms/ice_cream_vanilla_platform.tscn" id="19_82xsv"]
+[ext_resource type="PackedScene" uid="uid://cs5pksw6xev68" path="res://scenes/platforms/ice_cream_choco_platform.tscn" id="20_getpj"]
+[ext_resource type="PackedScene" uid="uid://y7hick4f275u" path="res://scenes/platforms/reindeer_platform.tscn" id="20_hrvbo"]
+[ext_resource type="PackedScene" uid="uid://cdmw48psl1xep" path="res://scenes/props/candy_cane_green.tscn" id="21_0odxb"]
+[ext_resource type="PackedScene" uid="uid://dgcy02mf1grue" path="res://scenes/props/candy_cane_red.tscn" id="22_lswn8"]
+[ext_resource type="PackedScene" uid="uid://ceaq7j32a4p8q" path="res://scenes/props/gingerbread_man.tscn" id="23_a6jrf"]
+[ext_resource type="PackedScene" uid="uid://dknrrqi3j7di3" path="res://scenes/props/ginger_bread.tscn" id="24_xuqvo"]
+[ext_resource type="PackedScene" uid="uid://dybqi65hqlj1t" path="res://scenes/props/gingerbread_woman.tscn" id="25_qsp4k"]
+[ext_resource type="PackedScene" uid="uid://tbcl4jqj4ud4" path="res://scenes/props/nutcracker.tscn" id="26_4k2k6"]
+[ext_resource type="PackedScene" uid="uid://td8c7ltoqpo3" path="res://scenes/props/present_green_cube.tscn" id="27_0rl1p"]
+[ext_resource type="PackedScene" uid="uid://bdpdssk5otu7w" path="res://scenes/props/present_green_rectangle.tscn" id="28_ok6jj"]
+[ext_resource type="PackedScene" uid="uid://c15k2m850ewn2" path="res://scenes/props/present_green_round.tscn" id="29_facbu"]
+[ext_resource type="PackedScene" uid="uid://byg7ue2ptq8pk" path="res://scenes/props/present_red_cube.tscn" id="30_b1qrp"]
+[ext_resource type="PackedScene" uid="uid://dgc55r3al4ycx" path="res://scenes/props/present_red_rectangle.tscn" id="31_come4"]
+[ext_resource type="PackedScene" uid="uid://cnhturmgl5ppg" path="res://scenes/props/present_red_round.tscn" id="32_h8e4i"]
+[ext_resource type="PackedScene" uid="uid://d38lk7fp2qff3" path="res://scenes/props/reindeer.tscn" id="33_4lmeg"]
+[ext_resource type="PackedScene" uid="uid://ctp5j0mwufud4" path="res://scenes/props/snowman_hat.tscn" id="34_0cp0l"]
+[ext_resource type="PackedScene" uid="uid://bnj4khwhhopnq" path="res://scenes/props/snow_bunker.tscn" id="35_d2t1y"]
+[ext_resource type="PackedScene" uid="uid://bbyvwyopofp51" path="res://scenes/props/snow_flat.tscn" id="36_gngh3"]
+[ext_resource type="PackedScene" uid="uid://doceb45ovx786" path="res://scenes/props/snow_flat_large.tscn" id="37_0n3wm"]
+[ext_resource type="PackedScene" uid="uid://t5b3u18cqnnw" path="res://scenes/props/snow_pile.tscn" id="38_qnost"]
+[ext_resource type="PackedScene" uid="uid://detwqidsf7i15" path="res://scenes/props/tree_decorated.tscn" id="39_wnkbs"]
+[ext_resource type="PackedScene" uid="uid://chan1640kaiu1" path="res://scenes/props/tree_decorated_snow.tscn" id="40_f6a44"]
+[ext_resource type="PackedScene" uid="uid://dsifhead1xpc6" path="res://scenes/props/tree_snow_a.tscn" id="41_0cbny"]
+[ext_resource type="PackedScene" uid="uid://bp37ju8twhhpk" path="res://scenes/props/tree_snow_b.tscn" id="42_hrvbo"]
+[ext_resource type="PackedScene" uid="uid://4gd3xoq52pam" path="res://scenes/platforms/ice_cream_scoop_vanilla_platform.tscn" id="43_0n3wm"]
+[ext_resource type="PackedScene" uid="uid://bsee4b8lgg8xd" path="res://scenes/props/tree_snow_c.tscn" id="43_uypp3"]
+[ext_resource type="PackedScene" uid="uid://de651j1ouok0a" path="res://scenes/platforms/cupcake_medium_platform.tscn" id="44_qnost"]
+[ext_resource type="PackedScene" uid="uid://c4vewcctkqrwb" path="res://scenes/platforms/pudding_medium_platform.tscn" id="45_wnkbs"]
+>>>>>>> Stashed changes
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -64,7 +108,6 @@ use_collision = true
 size = Vector3(303, 1, 252.1)
 
 [node name="ProtoController" parent="." instance=ExtResource("1_ig7tw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 can_freefly = true
 jump_velocity = 10.0
 sprint_speed = 20.0
@@ -74,391 +117,20 @@ input_forward = "move_up"
 input_back = "move_down"
 input_jump = "jump"
 
-[node name="candy corn mountain" type="Node3D" parent="."]
-transform = Transform3D(24, 0, 0, 0, 48, 0, 0, 0, 20, 75.6, 0.60000026, -80.200005)
-visible = false
-
-[node name="combiner" type="CSGCombiner3D" parent="candy corn mountain"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.7000003, 56.300003)
-use_collision = true
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="candy corn mountain/combiner"]
-transform = Transform3D(1, 0, 0, 0, 0.96000004, 0, 0, 0, 1, -3.2000003, 2.641407, -57.498734)
-use_collision = true
-radius = 1.7
-radial_segments = 30
-rings = 20
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="candy corn mountain/combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3083339, 1.75, -57.47)
-operation = 2
-size = Vector3(3.8, 1.7, 4.2000003)
-
-[node name="gumdrop" type="Node3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6, 0.60000026, -68.4)
-
-[node name="gumdrop combiner" type="CSGCombiner3D" parent="gumdrop"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.7000003, 56.300003)
-use_collision = true
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="gumdrop/gumdrop combiner"]
-transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 2.641407, -56.20372)
-use_collision = true
-radius = 1.4
-radial_segments = 20
-rings = 15
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="gumdrop/gumdrop combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 1.75, -56.100002)
-operation = 2
-size = Vector3(3.8, 1.7, 4.2000003)
-
-[node name="gumdrop2" type="Node3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 12.799999, 0.60000026, -68.50001)
-
-[node name="gumdrop combiner" type="CSGCombiner3D" parent="gumdrop2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.7000003, 56.300003)
-use_collision = true
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="gumdrop2/gumdrop combiner"]
-transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 2.641407, -56.20372)
-use_collision = true
-radius = 1.4
-radial_segments = 20
-rings = 15
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="gumdrop2/gumdrop combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 1.75, -56.100002)
-operation = 2
-size = Vector3(3.8, 1.7, 4.2000003)
-
-[node name="gumdrop3" type="Node3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 22.2, 0.60000026, -71.100006)
-
-[node name="gumdrop combiner" type="CSGCombiner3D" parent="gumdrop3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.7000003, 56.300003)
-use_collision = true
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="gumdrop3/gumdrop combiner"]
-transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 2.641407, -56.20372)
-use_collision = true
-radius = 1.4
-radial_segments = 20
-rings = 15
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="gumdrop3/gumdrop combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 1.75, -56.100002)
-operation = 2
-size = Vector3(3.8, 1.7, 4.2000003)
-
-[node name="gumdrop4" type="Node3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 37.999996, 0.60000026, -75.9)
-
-[node name="gumdrop combiner" type="CSGCombiner3D" parent="gumdrop4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.7000003, 56.300003)
-use_collision = true
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="gumdrop4/gumdrop combiner"]
-transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, -1.000001, 2.641407, -56.443726)
-use_collision = true
-radius = 1.4
-radial_segments = 20
-rings = 13
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="gumdrop4/gumdrop combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 1.75, -56.100002)
-operation = 2
-size = Vector3(3.8, 1.7, 4.2000003)
-
-[node name="peppermint patties" type="CSGCombiner3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.61129, 9.638446, -87.59475)
-use_collision = true
-
-[node name="peppermint2" type="CSGCylinder3D" parent="peppermint patties"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0999985, 2.9000006, -13.5)
-visible = false
-use_collision = true
-radius = 5.7000003
-height = 2.2
-sides = 26
-
-[node name="peppermint3" type="CSGCylinder3D" parent="peppermint patties"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 5.9000006, -27.599998)
-visible = false
-use_collision = true
-radius = 5.7000003
-height = 2.2
-sides = 26
-
-[node name="peppermint4" type="CSGCylinder3D" parent="peppermint patties"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8999977, 8.900001, -39.800003)
-use_collision = true
-radius = 5.7000003
-height = 2.2
-sides = 26
-
-[node name="peppermint5" type="CSGCylinder3D" parent="peppermint patties"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.299995, 11.900001, -49.200005)
-visible = false
-use_collision = true
-radius = 5.7000003
-height = 2.2
-sides = 26
-
-[node name="peppermint6" type="CSGCylinder3D" parent="peppermint patties"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.299995, 14.900001, -54.6)
-use_collision = true
-radius = 5.7000003
-height = 2.2
-sides = 26
-
-[node name="lollipops" type="CSGCombiner3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3112955, 24.538446, -142.19475)
-use_collision = true
-
-[node name="lollipop" type="CSGCombiner3D" parent="lollipops"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.611296, -0.60723495, -1.8856964)
-use_collision = true
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="lollipops/lollipop"]
-radius = 5.7000003
-radial_segments = 18
-rings = 15
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lollipops/lollipop"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.081211, -0.033432007)
-height = 18.5
-
-[node name="lollipop2" type="CSGCombiner3D" parent="lollipops"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -22.611298, -5.607237, -1.8856964)
-use_collision = true
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="lollipops/lollipop2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87499905, 0, 0)
-radius = 5.7000003
-radial_segments = 18
-rings = 15
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lollipops/lollipop2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.081211, -0.033432007)
-height = 18.5
-
-[node name="lollipop3" type="CSGCombiner3D" parent="lollipops"]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -33.811295, -3.9072342, 3.5142975)
-use_collision = true
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="lollipops/lollipop3"]
-radius = 5.7000003
-radial_segments = 18
-rings = 15
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lollipops/lollipop3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.081211, -0.033432007)
-height = 18.5
-
-[node name="lollipop4" type="CSGCombiner3D" parent="lollipops"]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -48.611294, 1.392765, 9.0142975)
-use_collision = true
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="lollipops/lollipop4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.72727203, 0, 0)
-radius = 5.7000003
-radial_segments = 18
-rings = 15
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lollipops/lollipop4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.081211, -0.033432007)
-height = 18.5
-
-[node name="lollipop5" type="CSGCombiner3D" parent="lollipops"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.811295, -0.60723495, 18.914307)
-use_collision = true
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="lollipops/lollipop5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.70000076, 0, 0)
-radius = 5.7000003
-radial_segments = 18
-rings = 15
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lollipops/lollipop5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.081211, -0.033432007)
-height = 18.5
-
-[node name="lollipop6" type="CSGCombiner3D" parent="lollipops"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -61.711296, -5.407236, 32.114296)
-use_collision = true
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="lollipops/lollipop6"]
-radius = 5.7000003
-radial_segments = 18
-rings = 15
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lollipops/lollipop6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.081211, -0.033432007)
-height = 18.5
-
-[node name="lollipop7" type="CSGCombiner3D" parent="lollipops"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -67.5113, -12.607236, 37.214302)
-use_collision = true
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="lollipops/lollipop7"]
-radius = 5.7000003
-radial_segments = 18
-rings = 15
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lollipops/lollipop7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.081211, -0.033432007)
-height = 18.5
-
-[node name="lollipop8" type="CSGCombiner3D" parent="lollipops"]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -61.0113, -7.8072357, 42.714302)
-use_collision = true
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="lollipops/lollipop8"]
-radius = 5.7000003
-radial_segments = 18
-rings = 15
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lollipops/lollipop8"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.081211, -0.033432007)
-height = 18.5
-
-[node name="lollipop9" type="CSGCombiner3D" parent="lollipops"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -64.1113, -5.7072353, 52.214302)
-use_collision = true
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="lollipops/lollipop9"]
-radius = 5.7000003
-radial_segments = 18
-rings = 15
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lollipops/lollipop9"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.081211, -0.033432007)
-height = 18.5
-
-[node name="lollipop10" type="CSGCombiner3D" parent="lollipops"]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -61.911297, -5.907236, 62.214302)
-use_collision = true
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="lollipops/lollipop10"]
-radius = 5.7000003
-radial_segments = 18
-rings = 15
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lollipops/lollipop10"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.081211, -0.033432007)
-height = 18.5
-
-[node name="lollipop11" type="CSGCombiner3D" parent="lollipops"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.611298, -1.4072361, 63.8143)
-use_collision = true
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="lollipops/lollipop11"]
-radius = 5.7000003
-radial_segments = 18
-rings = 15
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lollipops/lollipop11"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.081211, -0.033432007)
-height = 18.5
-
-[node name="donuts" type="CSGCombiner3D" parent="."]
-use_collision = true
-
-[node name="donut" type="CSGTorus3D" parent="donuts"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -26.4, 22.182507, -71)
-use_collision = true
-outer_radius = 1.2
-sides = 25
-ring_sides = 18
-
-[node name="donut2" type="CSGTorus3D" parent="donuts"]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -10.299999, 25.982506, -64.600006)
-visible = false
-use_collision = true
-outer_radius = 1.2
-sides = 25
-ring_sides = 18
-
-[node name="donut3" type="CSGTorus3D" parent="donuts"]
-transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 7.8000016, 30.782505, -64.90001)
-use_collision = true
-outer_radius = 1.2
-sides = 25
-ring_sides = 18
-
-[node name="donut4" type="CSGTorus3D" parent="donuts"]
-transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 29, 35.382504, -73.00001)
-use_collision = true
-outer_radius = 1.2
-sides = 25
-ring_sides = 18
-
-[node name="chocolate" type="CSGCombiner3D" parent="."]
-use_collision = true
-
-[node name="chocolate bar" type="CSGBox3D" parent="chocolate"]
-transform = Transform3D(0.9396926, -0.11697781, -0.3213938, 3.405773e-08, 0.939693, -0.34202015, 0.3420203, 0.32139388, 0.8830225, 34.77062, 40.292656, -87.1242)
-use_collision = true
-size = Vector3(8.3, 1, 18.5)
-
-[node name="chocolate bar2" type="CSGBox3D" parent="chocolate"]
-transform = Transform3D(0.93969256, -0.059391193, -0.33682415, 0, 0.9848081, -0.17364822, 0.3420201, 0.16317597, 0.92541677, 44.070618, 45.792652, -105.0242)
-use_collision = true
-size = Vector3(8.3, 1, 18.5)
-
-[node name="chocolate bar3" type="CSGBox3D" parent="chocolate"]
-transform = Transform3D(0.7660444, 0.11161893, 0.63302237, 0, 0.9848081, -0.17364822, -0.6427875, 0.13302226, 0.7544067, 37.370617, 49.39265, -123.0242)
-use_collision = true
-size = Vector3(8.3, 1, 18.5)
-
-[node name="chocolate bar4" type="CSGBox3D" parent="chocolate"]
-transform = Transform3D(0.49999988, 0.15038379, 0.85286844, 0, 0.9848081, -0.17364818, -0.86602515, 0.08682412, 0.49240384, 22.970617, 53.492653, -136.4242)
-use_collision = true
-size = Vector3(8.3, 1, 18.5)
-
-[node name="chocolate bar5" type="CSGBox3D" parent="chocolate"]
-transform = Transform3D(5.9604645e-08, 0.17364825, 0.9848076, 0, 0.9848081, -0.17364818, -0.9999999, 1.4901161e-08, 0, 3.7706175, 58.692654, -142.3242)
-use_collision = true
-size = Vector3(8.3, 1, 18.5)
-
-[node name="chocolate bar6" type="CSGBox3D" parent="chocolate"]
-transform = Transform3D(-0.6427874, 0.13302226, 0.75440633, 2.0779433e-16, 0.984808, -0.17364815, -0.7660444, -0.11161891, -0.63302207, -15.029384, 63.192654, -133.1242)
-use_collision = true
-size = Vector3(8.3, 1, 18.5)
-
-[node name="chocolate bar7" type="CSGBox3D" parent="chocolate"]
-transform = Transform3D(-0.8660252, 0.086824134, 0.49240375, 5.7074754e-09, 0.984808, -0.17364815, -0.5, -0.15038377, -0.8528683, -28.529385, 67.99265, -118.82421)
-use_collision = true
-size = Vector3(8.3, 1, 18.5)
-
-[node name="chocolate bar8" type="CSGBox3D" parent="chocolate"]
-transform = Transform3D(-4.371138e-08, 0, -0.99999964, 0, 1.0000002, 0, 0.9999998, 0, -4.3711374e-08, -22.729382, 70.69265, -104.72421)
-use_collision = true
-size = Vector3(8.3, 1, 18.5)
-
-[node name="treasure box" type="CSGBox3D" parent="."]
-transform = Transform3D(0.8528685, 0.17364818, -0.49240386, -0.15038373, 0.9848077, 0.08682409, 0.5, 0, 0.8660254, 1.8, 76.1, -104.299995)
-use_collision = true
-size = Vector3(1.5, 1, 1)
-
 [node name="CandyCorn" parent="." instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1903489, 34.95767, -103.89893)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 16.155771, -60.771996)
 
-[node name="CookieRotator" parent="." instance=ExtResource("3_h2yge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.5, 8.6, -87)
+[node name="DessertPlatforms" type="Node3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 16.155771, -60.771996)
 
-[node name="CookieChocolateRotator" parent="." instance=ExtResource("4_lquwl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.8, 10, -101.2)
+[node name="CakePlatform" parent="DessertPlatforms" instance=ExtResource("3_074og")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.79999995, -3.9139428, 3.6429992)
 
-[node name="CookieRotator2" parent="." instance=ExtResource("3_h2yge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.500006, 20.300001, -136.7)
+[node name="IceCreamScoopChocoPlatformRoot" parent="DessertPlatforms" instance=ExtResource("13_xuqvo")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 1.575, -3.9139428, 4.0179987)
 
-[node name="CookieRotator3" parent="." instance=ExtResource("3_h2yge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.2, 14.300001, -115.1)
-
-[node name="DonutLift" parent="." instance=ExtResource("4_1bvp3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3, 23.4, -64.100006)
+[node name="IceCreamScoopMintPlatform" parent="DessertPlatforms" instance=ExtResource("14_qsp4k")]
+transform = Transform3D(3.200625, 0, 0.5643565, 0, 3.2499998, 0, -0.5643565, 0, 3.200625, 1.5250001, -3.9139428, 3.342999)
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.682148, 48.316742, -92.36358)
@@ -478,3 +150,244 @@ draw_pass_1 = SubResource("QuadMesh_kek77")
 
 [node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="."]
 size = Vector3(100, 1, 100)
+[node name="IceCreamScoopVanillaPlatform" parent="DessertPlatforms" instance=ExtResource("43_0n3wm")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 1.925, -3.9139428, 3.6179986)
+
+[node name="IceCreamScoopVanillaPlatform2" parent="DessertPlatforms" instance=ExtResource("43_0n3wm")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 2.175, -3.9139428, 3.967999)
+
+[node name="IceCreamScoopChocoPlatform" parent="DessertPlatforms" instance=ExtResource("13_xuqvo")]
+transform = Transform3D(3.939231, 0, 0.6945927, 0, 4, 0, -0.6945927, 0, 3.939231, 2.15, -3.9139428, 3.1429987)
+
+[node name="IceCreamScoopMintPlatform2" parent="DessertPlatforms" instance=ExtResource("14_qsp4k")]
+transform = Transform3D(2.8145823, 0, 1.6249999, 0, 3.2499998, 0, -1.6249999, 0, 2.8145823, 2.425, -3.9139428, 3.4929986)
+
+[node name="CandyBarPlatform" parent="DessertPlatforms" instance=ExtResource("4_cegan")]
+transform = Transform3D(0.20647615, -0.17081219, 1.9819663, 1.274848, 1.5410265, -6.388958e-08, -1.5271311, 1.2633528, 0.26797217, 2.675, -3.7389426, 3.9429984)
+
+[node name="CupcakePlatform" parent="DessertPlatforms" instance=ExtResource("8_d13ii")]
+transform = Transform3D(2.7082212, 0, -0.4775325, 0, 2.75, 0, 0.4775325, 0, 2.7082212, 2.8, -3.9139428, 2.9179993)
+
+[node name="CakePlatform2" parent="DessertPlatforms" instance=ExtResource("3_074og")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 3.225, -3.9139428, 3.592999)
+
+[node name="PuddingPlatform" parent="DessertPlatforms" instance=ExtResource("15_kq58d")]
+transform = Transform3D(4.330127, 0, 2.4999995, 0, 4.9999995, 0, -2.4999995, 0, 4.330127, 3.525, -3.9139428, 2.557499)
+
+[node name="IceCreamScoopMintPlatform3" parent="DessertPlatforms" instance=ExtResource("14_qsp4k")]
+transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, 3.425, -3.9139428, 1.8179989)
+
+[node name="IceCreamScoopMintPlatform4" parent="DessertPlatforms" instance=ExtResource("14_qsp4k")]
+transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, 3.725, -3.9139428, 1.1179991)
+
+[node name="CupcakeMediumPlatform" parent="DessertPlatforms" instance=ExtResource("44_qnost")]
+transform = Transform3D(3.0310888, 0, -1.75, 0, 3.5, 0, 1.75, 0, 3.0310888, 4.2000003, -4.038943, 1.5679989)
+
+[node name="IceCreamScoopChocoPlatform3" parent="DessertPlatforms" instance=ExtResource("13_xuqvo")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4.3, -3.9139428, 2.442999)
+
+[node name="IceCreamScoopVanillaPlatform3" parent="DessertPlatforms" instance=ExtResource("43_0n3wm")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 4.7500005, -3.9139428, 2.0429988)
+
+[node name="IceCreamScoopVanillaPlatform4" parent="DessertPlatforms" instance=ExtResource("43_0n3wm")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 4.8500004, -3.9139428, 1.5929985)
+
+[node name="IceCreamScoopMintPlatform5" parent="DessertPlatforms" instance=ExtResource("14_qsp4k")]
+transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, 4.7500005, -3.9139428, 1.1679983)
+
+[node name="PuddingMediumPlatform" parent="DessertPlatforms" instance=ExtResource("45_wnkbs")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 4.4500003, -3.9139428, 0.4429989)
+
+[node name="CookieRotatorPlatforms" type="Node3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 17.1, 1.4999998, -67.100006)
+
+[node name="CookiePlatform" parent="CookieRotatorPlatforms" instance=ExtResource("7_ryguw")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0.6750002, 0.87500006, 0.5250006)
+
+[node name="CookieChocolatePlatform" parent="CookieRotatorPlatforms" instance=ExtResource("6_getpj")]
+transform = Transform3D(11.276312, 0, -4.1042414, 0, 12, 0, 4.1042414, 0, 11.276312, -0.5250001, 0.90000004, -1.4750004)
+
+[node name="CookiePlatform2" parent="CookieRotatorPlatforms" instance=ExtResource("7_ryguw")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -2.35, 1.4750001, -2.875001)
+
+[node name="CookieChocolatePlatform2" parent="CookieRotatorPlatforms" instance=ExtResource("6_getpj")]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -4.625, 1.5, -2.875)
+
+[node name="TallPlatforms" type="Node3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -25.6, 0.79999983, -69.8)
+
+[node name="IceCreamVanillaPlatform" parent="TallPlatforms" instance=ExtResource("19_82xsv")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 3.9250002, -0.07499996, -1.4749994)
+
+[node name="IceCreamChocoPlatform" parent="TallPlatforms" instance=ExtResource("20_getpj")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 2.9499996, -0.07499996, -0.5)
+
+[node name="IceCreamPlatform" parent="TallPlatforms" instance=ExtResource("12_a6jrf")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 2.1999998, -0.075, 0.75)
+
+[node name="SundaePlatform" parent="TallPlatforms" instance=ExtResource("16_seu75")]
+transform = Transform3D(6.5778484, 0, 2.394141, 0, 7, 0, -2.394141, 0, 6.5778484, 1.9249997, -0.07499996, 2.1749992)
+
+[node name="NutcrackerPlatform" parent="TallPlatforms" instance=ExtResource("18_f6a44")]
+transform = Transform3D(3.4641013, 0, -1.9999999, 0, 4, 0, 1.9999999, 0, 3.4641013, 2.9250002, -0.07499996, 4.799999)
+
+[node name="SnowmanPlatform" parent="TallPlatforms" instance=ExtResource("19_0cbny")]
+transform = Transform3D(1.9283628, 0, -2.2981334, 0, 3.0000005, 0, 2.2981334, 0, 1.9283628, 1.8000007, -0.07499996, 3.6500006)
+
+[node name="ReindeerPlatform" parent="TallPlatforms" instance=ExtResource("20_hrvbo")]
+transform = Transform3D(1.9485569, 0, -1.1249994, 0, 2.2499998, 0, 1.1249994, 0, 1.9485569, 1.150001, -0.07499996, 5.7000012)
+
+[node name="ReindeerPlatform2" parent="TallPlatforms" instance=ExtResource("20_hrvbo")]
+transform = Transform3D(1.1249998, 0, -1.9485568, 0, 2.2500002, 0, 1.9485568, 0, 1.1249998, 0.34999943, -0.07499996, 1.9499998)
+
+[node name="ReindeerPlatform3" parent="TallPlatforms" instance=ExtResource("20_hrvbo")]
+transform = Transform3D(-1.9485571, 0, -1.1250001, 0, 2.25, 0, 1.1250001, 0, -1.9485571, 2.525, -0.07499996, -2.3250008)
+
+[node name="IceCreamVanillaPlatform2" parent="TallPlatforms" instance=ExtResource("19_82xsv")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 1.5999999, -0.07499996, -0.4499998)
+
+[node name="IceCreamPlatformRoot" parent="TallPlatforms" instance=ExtResource("20_getpj")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0.9500003, -0.07499996, 0.5999994)
+
+[node name="DonutLiftPlatforms" type="Node3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -2.3, 16.7, -46.5)
+
+[node name="DonutPlatform" parent="DonutLiftPlatforms" instance=ExtResource("10_0odxb")]
+transform = Transform3D(5.638156, 0, -2.0521207, 0, 6, 0, 2.0521207, 0, 5.638156, -2.0249996, 0, 0.025000095)
+
+[node name="DonutSprinklesPlatform" parent="DonutLiftPlatforms" instance=ExtResource("11_lswn8")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -0.35000002, 0.19999981, 0.4250002)
+
+[node name="DonutChocolatePlatform" parent="DonutLiftPlatforms" instance=ExtResource("9_1u8w0")]
+transform = Transform3D(5.638156, 0, 2.0521207, 0, 6, 0, -2.0521207, 0, 5.638156, 1.35, 0.4000001, 0.3499999)
+
+[node name="DonutPlatform2" parent="DonutLiftPlatforms" instance=ExtResource("10_0odxb")]
+transform = Transform3D(5.638156, 0, -2.0521207, 0, 6, 0, 2.0521207, 0, 5.638156, 3, 0.5999999, -0.17499971)
+
+[node name="DonutSprinklesPlatform2" parent="DonutLiftPlatforms" instance=ExtResource("11_lswn8")]
+transform = Transform3D(5.9088464, 0, 1.0418891, 0, 6, 0, -1.0418891, 0, 5.9088464, 4.25, 0.8000002, -1.3000002)
+
+[node name="DonutChocolatePlatform2" parent="DonutLiftPlatforms" instance=ExtResource("9_1u8w0")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 4.825, 1, -2.7750006)
+
+[node name="SeeSawPlatforms" type="Node3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -1.8, 9.6, -24.9)
+
+[node name="WafflePlatform" parent="SeeSawPlatforms" instance=ExtResource("17_htxhm")]
+transform = Transform3D(3.9392304, 0, 0.69459265, 0, 4, 0, -0.69459265, 0, 3.9392304, 4.550001, 3.125, -9.650001)
+
+[node name="ChocolatePlatform" parent="SeeSawPlatforms" instance=ExtResource("5_82xsv")]
+transform = Transform3D(2.226681, 1.2855749, -3.064177, -1.9999998, 3.464101, -4.073701e-08, 2.6536546, 1.5320885, 2.57115, 4.000001, 3.5749998, -10.85)
+
+[node name="WafflePlatform2" parent="SeeSawPlatforms" instance=ExtResource("17_htxhm")]
+transform = Transform3D(1.3680804, 0, 3.7587702, 0, 4, 0, -3.7587702, 0, 1.3680804, 2.825, 3.775, -11.799998)
+
+[node name="ChocolatePlatform2" parent="SeeSawPlatforms" instance=ExtResource("5_82xsv")]
+transform = Transform3D(3.4114738, 1.9696151, -0.6945929, -1.9999998, 3.4641016, -8.20044e-08, 0.60153466, 0.34729636, 3.9392307, 1.65, 4.225, -12.075001)
+
+[node name="WafflePlatform3" parent="SeeSawPlatforms" instance=ExtResource("17_htxhm")]
+transform = Transform3D(3.7587702, 0, 1.3680806, 0, 4, 0, -1.3680806, 0, 3.7587702, -2.175, 5.1, -11.675)
+
+[node name="ChocolatePlatform3" parent="SeeSawPlatforms" instance=ExtResource("5_82xsv")]
+transform = Transform3D(3.4114738, 1.9696153, 0.6945927, -2, 3.4641016, -7.985502e-09, -0.60153496, -0.3472963, 3.9392304, -0.92499995, 4.9249997, -12.025001)
+
+[node name="WafflePlatform4" parent="SeeSawPlatforms" instance=ExtResource("17_htxhm")]
+transform = Transform3D(4, 0, 2.3841858e-07, 0, 4, 0, -2.3841858e-07, 0, 4, 0.32499993, 4.425, -12.249999)
+
+[node name="ChocolatePlatform4" parent="SeeSawPlatforms" instance=ExtResource("5_82xsv")]
+transform = Transform3D(-0.9315655, -0.53783965, 3.8526502, -1.9999995, 3.4641008, 1.2152441e-07, -3.336493, -1.9263252, -1.0756791, -1.9999995, 5.7000003, -10.525001)
+
+[node name="WafflePlatform5" parent="SeeSawPlatforms" instance=ExtResource("17_htxhm")]
+transform = Transform3D(3.939231, 0, -0.6945927, 0, 4, 0, 0.6945927, 0, 3.939231, -1.4249997, 5.725001, -9.150001)
+
+[node name="Decorations" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.5, -15.6)
+
+[node name="Trees" type="Node3D" parent="Decorations"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -45.31395, 0, 6.6407146)
+
+[node name="TreeDecoratedRoot" parent="Decorations/Trees" instance=ExtResource("39_wnkbs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="TreeDecoratedSnowRoot" parent="Decorations/Trees" instance=ExtResource("40_f6a44")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2338953, -4.4703484e-08, 0.35718203)
+
+[node name="TreeSnowARoot" parent="Decorations/Trees" instance=ExtResource("41_0cbny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2084846, 0, 1.636572)
+
+[node name="TreeSnowBRoot" parent="Decorations/Trees" instance=ExtResource("42_hrvbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13101816, -4.4703484e-08, 1.3930272)
+
+[node name="TreeSnowCRoot" parent="Decorations/Trees" instance=ExtResource("43_uypp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0638752, -4.4703484e-08, 2.6136131)
+
+[node name="Snow" type="Node3D" parent="Decorations"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -45.713947, 0, 13.040714)
+
+[node name="SnowBunkerRoot" parent="Decorations/Snow" instance=ExtResource("35_d2t1y")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.367143, 0, 2.134067)
+
+[node name="SnowFlatRoot" parent="Decorations/Snow" instance=ExtResource("36_gngh3")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.982292, 0, 2.2162452)
+
+[node name="SnowFlatLargeRoot" parent="Decorations/Snow" instance=ExtResource("37_0n3wm")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.5009172, 0, 2.512603)
+
+[node name="SnowPileRoot" parent="Decorations/Snow" instance=ExtResource("38_qnost")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.9888904, 2.2351742e-08, 2.6612134)
+
+[node name="CandyCanes" type="Node3D" parent="Decorations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, 0, 0)
+
+[node name="CandyCaneGreen" parent="Decorations/CandyCanes" instance=ExtResource("21_0odxb")]
+
+[node name="CandyCaneRedRoot" parent="Decorations/CandyCanes" instance=ExtResource("22_lswn8")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 2.3000002, 0, -0.3000002)
+
+[node name="Presents" type="Node3D" parent="Decorations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.400002, 0, 0)
+
+[node name="PresentGreenCubeRoot" parent="Decorations/Presents" instance=ExtResource("27_0rl1p")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -12.869919, 0.010705948, 1.0385246)
+
+[node name="PresentGreenRectangleRoot" parent="Decorations/Presents" instance=ExtResource("28_ok6jj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -17.162922, 0.06575823, 0.5405493)
+
+[node name="PresentGreenRoundRoot" parent="Decorations/Presents" instance=ExtResource("29_facbu")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -14.368351, -0.008588195, -2.8390121)
+
+[node name="PresentRedCubeRoot" parent="Decorations/Presents" instance=ExtResource("30_b1qrp")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -26.847305, 0, -10.290184)
+
+[node name="PresentRedRectangleRoot" parent="Decorations/Presents" instance=ExtResource("31_come4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -27.38118, 0, -18.27445)
+
+[node name="PresentRedRoundRoot" parent="Decorations/Presents" instance=ExtResource("32_h8e4i")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -29.697319, 0, -17.852526)
+
+[node name="GingerBreadPeople" type="Node3D" parent="Decorations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2, 0, 0)
+
+[node name="GingerbreadManRoot" parent="Decorations/GingerBreadPeople" instance=ExtResource("23_a6jrf")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -6.1000004, 0, 3.8000002)
+
+[node name="GingerBreadRoot" parent="Decorations/GingerBreadPeople" instance=ExtResource("24_xuqvo")]
+transform = Transform3D(-1.9670124e-07, 4.4999995, -7.794229, -9, -3.934025e-07, 0, -3.4069657e-07, 7.794229, 4.4999995, -2.9000006, 1.2, 4.8)
+
+[node name="GingerbreadWomanRoot" parent="Decorations/GingerBreadPeople" instance=ExtResource("25_qsp4k")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -0.5, 0, 4.8)
+
+[node name="HolidayCharacters" type="Node3D" parent="Decorations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.299999, -0.5, 22.300001)
+
+[node name="NutcrackerRoot" parent="Decorations/HolidayCharacters" instance=ExtResource("26_4k2k6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -21.021324, 0.49999976, -11.836912)
+
+[node name="ReindeerRoot" parent="Decorations/HolidayCharacters" instance=ExtResource("33_4lmeg")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -9.194484, 0.5, -10.107426)
+
+[node name="SnowmanHatRoot" parent="Decorations/HolidayCharacters" instance=ExtResource("34_0cp0l")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -6.5416, 0.49999976, -9.655069)
+
+[node name="ReindeerPlatformRoot" parent="." instance=ExtResource("20_hrvbo")]
+transform = Transform3D(-9, 0, 9.536743e-07, 0, 9, 0, -9.536743e-07, 0, -9, -7.3, 0.5, -61.199997)

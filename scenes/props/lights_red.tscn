@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://p5ojhwln17qa"]
+
+[ext_resource type="PackedScene" uid="uid://d265u6fdgh6u1" path="res://assets/models/HolidayKit/lights-red.glb" id="1_rrohl"]
+
+[node name="LightsRedRoot" type="Node3D"]
+
+[node name="lights-red2" parent="." instance=ExtResource("1_rrohl")]
