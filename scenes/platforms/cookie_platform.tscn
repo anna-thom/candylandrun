@@ -10,11 +10,11 @@ radius = 0.10986328
 [node name="CookiePlatformRoot" type="Node3D"]
 transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 0, 0)
 
-[node name="cookie2" parent="." instance=ExtResource("1_ky3l4")]
-
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
 script = ExtResource("2_n4k8g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01977539, 0)
 shape = SubResource("CylinderShape3D_n4k8g")
+
+[node name="cookie2" parent="AnimatableBody3D" instance=ExtResource("1_ky3l4")]
