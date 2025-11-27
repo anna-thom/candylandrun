@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhxb4qol3j1cb"]
+[gd_scene load_steps=4 format=3 uid="uid://bhxb4qol3j1cb"]
 
 [ext_resource type="PackedScene" uid="uid://2cbgy3rf8fe2" path="res://assets/models/FoodKit/chocolate.glb" id="1_2xfgj"]
+[ext_resource type="Script" uid="uid://cxyqsei0qxmqp" path="res://scenes/platforms/scripts/chocolate_platform.gd" id="2_aelgj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2xfgj"]
 size = Vector3(0.2919922, 0.034179688, 0.14648438)
@@ -11,6 +12,7 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 [node name="chocolate2" parent="." instance=ExtResource("1_2xfgj")]
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
+script = ExtResource("2_aelgj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.016601563, 0)

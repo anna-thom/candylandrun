@@ -1,0 +1,440 @@
+[gd_scene load_steps=63 format=3 uid="uid://djq3e1h0wsnap"]
+
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_c2p6q"]
+[ext_resource type="PackedScene" uid="uid://ckwww5wcyeyd2" path="res://scenes/props/candy_corn.tscn" id="2_wpcwq"]
+[ext_resource type="PackedScene" uid="uid://cccn5a6xtgdpy" path="res://scenes/platforms/cake_platform.tscn" id="3_1cico"]
+[ext_resource type="PackedScene" uid="uid://c4hp8i1q4le26" path="res://scenes/platforms/ice_cream_scoop_choco_platform.tscn" id="4_vly3c"]
+[ext_resource type="PackedScene" uid="uid://cmrwvybaqirc7" path="res://scenes/platforms/ice_cream_scoop_mint_platform.tscn" id="5_ex312"]
+[ext_resource type="PackedScene" uid="uid://4gd3xoq52pam" path="res://scenes/platforms/ice_cream_scoop_vanilla_platform.tscn" id="6_ax18d"]
+[ext_resource type="PackedScene" uid="uid://cuwqy2i24ql6j" path="res://scenes/platforms/candy_bar_platform.tscn" id="7_rfdry"]
+[ext_resource type="PackedScene" uid="uid://bhedptnun8cbp" path="res://scenes/platforms/cupcake_platform.tscn" id="8_sssyf"]
+[ext_resource type="PackedScene" uid="uid://c1fl46q7vlcdh" path="res://scenes/platforms/pudding_platform.tscn" id="9_vm8sr"]
+[ext_resource type="PackedScene" uid="uid://de651j1ouok0a" path="res://scenes/platforms/cupcake_medium_platform.tscn" id="10_1vew3"]
+[ext_resource type="PackedScene" uid="uid://c4vewcctkqrwb" path="res://scenes/platforms/pudding_medium_platform.tscn" id="11_uq727"]
+[ext_resource type="Texture2D" uid="uid://c4gsh87krilvw" path="res://addons/kenney_particle_pack/smoke_01.png" id="12_ubcti"]
+[ext_resource type="PackedScene" uid="uid://bij2iljjnejke" path="res://scenes/platforms/cookie_platform.tscn" id="13_xyh7p"]
+[ext_resource type="PackedScene" uid="uid://7s45kqxxuvsg" path="res://scenes/platforms/cookie_chocolate_platform.tscn" id="14_4b6n5"]
+[ext_resource type="PackedScene" uid="uid://lgnjbw6gps88" path="res://scenes/platforms/ice_cream_vanilla_platform.tscn" id="15_82l55"]
+[ext_resource type="PackedScene" uid="uid://cs5pksw6xev68" path="res://scenes/platforms/ice_cream_choco_platform.tscn" id="16_3s3cj"]
+[ext_resource type="PackedScene" uid="uid://bpyddi5qxt6n8" path="res://scenes/platforms/ice_cream_platform.tscn" id="17_ogwt2"]
+[ext_resource type="PackedScene" uid="uid://dnegokoe0dsib" path="res://scenes/platforms/sundae_platform.tscn" id="18_5w1fe"]
+[ext_resource type="PackedScene" uid="uid://c7args2qt0f8v" path="res://scenes/platforms/nutcracker_platform.tscn" id="19_f2hvt"]
+[ext_resource type="PackedScene" uid="uid://d113v07aekqqk" path="res://scenes/platforms/snowman_platform.tscn" id="20_k0ts1"]
+[ext_resource type="PackedScene" uid="uid://y7hick4f275u" path="res://scenes/platforms/reindeer_platform.tscn" id="21_s7dn8"]
+[ext_resource type="PackedScene" uid="uid://du8jpag41adwq" path="res://scenes/platforms/donut_platform.tscn" id="22_ank8w"]
+[ext_resource type="PackedScene" uid="uid://c6f4ny0vbndeg" path="res://scenes/platforms/donut_sprinkles_platform.tscn" id="23_cl0p3"]
+[ext_resource type="PackedScene" uid="uid://dm0em58p8lna5" path="res://scenes/platforms/donut_chocolate_platform.tscn" id="24_okvrl"]
+[ext_resource type="PackedScene" uid="uid://c8u1aimmgqfqw" path="res://scenes/platforms/waffle_platform.tscn" id="25_u5fym"]
+[ext_resource type="PackedScene" uid="uid://bhxb4qol3j1cb" path="res://scenes/platforms/chocolate_platform.tscn" id="26_bnahf"]
+[ext_resource type="PackedScene" uid="uid://detwqidsf7i15" path="res://scenes/props/tree_decorated.tscn" id="27_d875j"]
+[ext_resource type="PackedScene" uid="uid://chan1640kaiu1" path="res://scenes/props/tree_decorated_snow.tscn" id="28_33yq4"]
+[ext_resource type="PackedScene" uid="uid://dsifhead1xpc6" path="res://scenes/props/tree_snow_a.tscn" id="29_h77m4"]
+[ext_resource type="PackedScene" uid="uid://bp37ju8twhhpk" path="res://scenes/props/tree_snow_b.tscn" id="30_d5pwj"]
+[ext_resource type="PackedScene" uid="uid://bsee4b8lgg8xd" path="res://scenes/props/tree_snow_c.tscn" id="31_7jxy1"]
+[ext_resource type="PackedScene" uid="uid://bnj4khwhhopnq" path="res://scenes/props/snow_bunker.tscn" id="32_6jgcr"]
+[ext_resource type="PackedScene" uid="uid://bbyvwyopofp51" path="res://scenes/props/snow_flat.tscn" id="33_7phwo"]
+[ext_resource type="PackedScene" uid="uid://doceb45ovx786" path="res://scenes/props/snow_flat_large.tscn" id="34_qv7w3"]
+[ext_resource type="PackedScene" uid="uid://t5b3u18cqnnw" path="res://scenes/props/snow_pile.tscn" id="35_h40lo"]
+[ext_resource type="PackedScene" uid="uid://cdmw48psl1xep" path="res://scenes/props/candy_cane_green.tscn" id="36_kfacp"]
+[ext_resource type="PackedScene" uid="uid://dgcy02mf1grue" path="res://scenes/props/candy_cane_red.tscn" id="37_g42kr"]
+[ext_resource type="PackedScene" uid="uid://td8c7ltoqpo3" path="res://scenes/props/present_green_cube.tscn" id="38_v8jhy"]
+[ext_resource type="PackedScene" uid="uid://bdpdssk5otu7w" path="res://scenes/props/present_green_rectangle.tscn" id="39_7nru2"]
+[ext_resource type="PackedScene" uid="uid://c15k2m850ewn2" path="res://scenes/props/present_green_round.tscn" id="40_hh3yc"]
+[ext_resource type="PackedScene" uid="uid://byg7ue2ptq8pk" path="res://scenes/props/present_red_cube.tscn" id="41_2yyv0"]
+[ext_resource type="PackedScene" uid="uid://dgc55r3al4ycx" path="res://scenes/props/present_red_rectangle.tscn" id="42_utan4"]
+[ext_resource type="PackedScene" uid="uid://cnhturmgl5ppg" path="res://scenes/props/present_red_round.tscn" id="43_an08g"]
+[ext_resource type="PackedScene" uid="uid://ceaq7j32a4p8q" path="res://scenes/props/gingerbread_man.tscn" id="44_80wnb"]
+[ext_resource type="PackedScene" uid="uid://dknrrqi3j7di3" path="res://scenes/props/ginger_bread.tscn" id="45_ttctv"]
+[ext_resource type="PackedScene" uid="uid://dybqi65hqlj1t" path="res://scenes/props/gingerbread_woman.tscn" id="46_gik33"]
+[ext_resource type="PackedScene" uid="uid://tbcl4jqj4ud4" path="res://scenes/props/nutcracker.tscn" id="47_hi3tj"]
+[ext_resource type="PackedScene" uid="uid://d38lk7fp2qff3" path="res://scenes/props/reindeer.tscn" id="48_sp5li"]
+[ext_resource type="PackedScene" uid="uid://ctp5j0mwufud4" path="res://scenes/props/snowman_hat.tscn" id="49_je7g0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_ig7tw"]
+sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
+
+[sub_resource type="Environment" id="Environment_0xm2m"]
+background_mode = 2
+sky = SubResource("Sky_ig7tw")
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.81700003, 0.86576664, 0.95, 1)
+fog_sun_scatter = 0.5
+fog_density = 0.001
+fog_sky_affect = 0.7
+
+[sub_resource type="BoxMesh" id="BoxMesh_c2p6q"]
+size = Vector3(150, 1, 150)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wpcwq"]
+resource_name = "snow"
+cull_mode = 2
+albedo_color = Color(0.8118264, 0.8503239, 1, 1)
+roughness = 0.8
+emission_enabled = true
+emission = Color(0.4506483, 0.4506483, 0.45064825, 1)
+rim_enabled = true
+rim = 0.3
+rim_tint = 0.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c2p6q"]
+size = Vector3(150, 1, 150)
+
+[sub_resource type="Gradient" id="Gradient_1cico"]
+offsets = PackedFloat32Array(0, 0.49659863, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vly3c"]
+gradient = SubResource("Gradient_1cico")
+
+[sub_resource type="Curve" id="Curve_ex312"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.150289, 1), 0.0, 0.0, 0, 0, Vector2(0.9942196, 0.4044944), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ax18d"]
+curve = SubResource("Curve_ex312")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_272bh"]
+emission_shape = 3
+emission_box_extents = Vector3(70, 2, 70)
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 3.0
+gravity = Vector3(0, -20, 0)
+radial_accel_min = -4.0000024
+radial_accel_max = -2.2351742e-06
+tangential_accel_min = -8.000002
+tangential_accel_max = 7.9999976
+damping_max = 4.0
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_ax18d")
+color = Color(0.9428228, 0.94282264, 0.94282264, 1)
+color_ramp = SubResource("GradientTexture1D_vly3c")
+turbulence_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5vw27"]
+transparency = 2
+alpha_scissor_threshold = 0.1
+alpha_antialiasing_mode = 0
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("12_ubcti")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_kek77"]
+material = SubResource("StandardMaterial3D_5vw27")
+
+[node name="Main" type="Node3D"]
+
+[node name="Environment" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -88.30002)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_0xm2m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(-0.8660254, -0.17101009, -0.46984637, 0, -0.9396926, 0.34202015, -0.50000006, 0.29619813, 0.81379765, 32.4, 52.5, 13.699997)
+light_color = Color(1, 0.9647059, 0.8980392, 1)
+shadow_enabled = true
+shadow_bias = 0.05
+shadow_opacity = 0.4
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40)
+
+[node name="Floor" type="MeshInstance3D" parent="Environment/StaticBody3D"]
+mesh = SubResource("BoxMesh_c2p6q")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_wpcwq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/StaticBody3D"]
+shape = SubResource("BoxShape3D_c2p6q")
+
+[node name="SnowParticles" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -88.30002)
+
+[node name="SnowParticles" type="GPUParticles3D" parent="SnowParticles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 41, 39.4)
+amount = 1000
+lifetime = 10.0
+visibility_aabb = AABB(-107.3625, -86.43962, -101.58825, 214.94858, 119.18754, 227.32156)
+process_material = SubResource("ParticleProcessMaterial_272bh")
+draw_pass_1 = SubResource("QuadMesh_kek77")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="SnowParticles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40)
+size = Vector3(150, 1, 150)
+
+[node name="ProtoController" parent="." instance=ExtResource("1_c2p6q")]
+can_freefly = true
+jump_velocity = 10.0
+sprint_speed = 20.0
+input_left = "move_left"
+input_right = "move_right"
+input_forward = "move_up"
+input_back = "move_down"
+input_jump = "jump"
+
+[node name="CandyCorn" parent="." instance=ExtResource("2_wpcwq")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 16.155771, -60.771996)
+
+[node name="DessertPlatforms" type="Node3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 16.155771, -60.771996)
+
+[node name="CakePlatform" parent="DessertPlatforms" instance=ExtResource("3_1cico")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.79999995, -3.9139428, 3.6429992)
+
+[node name="IceCreamScoopChocoPlatformRoot" parent="DessertPlatforms" instance=ExtResource("4_vly3c")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 1.575, -3.9139428, 4.0179987)
+
+[node name="IceCreamScoopMintPlatform" parent="DessertPlatforms" instance=ExtResource("5_ex312")]
+transform = Transform3D(3.200625, 0, 0.5643565, 0, 3.2499998, 0, -0.5643565, 0, 3.200625, 1.5250001, -3.9139428, 3.342999)
+
+[node name="IceCreamScoopVanillaPlatform" parent="DessertPlatforms" instance=ExtResource("6_ax18d")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 1.925, -3.9139428, 3.6179986)
+
+[node name="IceCreamScoopVanillaPlatform2" parent="DessertPlatforms" instance=ExtResource("6_ax18d")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 2.175, -3.9139428, 3.967999)
+
+[node name="IceCreamScoopChocoPlatform" parent="DessertPlatforms" instance=ExtResource("4_vly3c")]
+transform = Transform3D(3.939231, 0, 0.6945927, 0, 4, 0, -0.6945927, 0, 3.939231, 2.15, -3.9139428, 3.1429987)
+
+[node name="IceCreamScoopMintPlatform2" parent="DessertPlatforms" instance=ExtResource("5_ex312")]
+transform = Transform3D(2.8145823, 0, 1.6249999, 0, 3.2499998, 0, -1.6249999, 0, 2.8145823, 2.425, -3.9139428, 3.4929986)
+
+[node name="CandyBarPlatform" parent="DessertPlatforms" instance=ExtResource("7_rfdry")]
+transform = Transform3D(0.20647615, -0.17081219, 1.9819663, 1.274848, 1.5410265, -6.388958e-08, -1.5271311, 1.2633528, 0.26797217, 2.675, -3.7389426, 3.9429984)
+
+[node name="CupcakePlatform" parent="DessertPlatforms" instance=ExtResource("8_sssyf")]
+transform = Transform3D(2.7082212, 0, -0.4775325, 0, 2.75, 0, 0.4775325, 0, 2.7082212, 2.8, -3.9139428, 2.9179993)
+
+[node name="CakePlatform2" parent="DessertPlatforms" instance=ExtResource("3_1cico")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 3.225, -3.9139428, 3.592999)
+
+[node name="PuddingPlatform" parent="DessertPlatforms" instance=ExtResource("9_vm8sr")]
+transform = Transform3D(4.330127, 0, 2.4999995, 0, 4.9999995, 0, -2.4999995, 0, 4.330127, 3.525, -3.9139428, 2.557499)
+
+[node name="IceCreamScoopMintPlatform3" parent="DessertPlatforms" instance=ExtResource("5_ex312")]
+transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, 3.425, -3.9139428, 1.8179989)
+
+[node name="IceCreamScoopMintPlatform4" parent="DessertPlatforms" instance=ExtResource("5_ex312")]
+transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, 3.725, -3.9139428, 1.1179991)
+
+[node name="CupcakeMediumPlatform" parent="DessertPlatforms" instance=ExtResource("10_1vew3")]
+transform = Transform3D(3.0310888, 0, -1.75, 0, 3.5, 0, 1.75, 0, 3.0310888, 4.2000003, -4.038943, 1.5679989)
+
+[node name="IceCreamScoopChocoPlatform3" parent="DessertPlatforms" instance=ExtResource("4_vly3c")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4.3, -3.9139428, 2.442999)
+
+[node name="IceCreamScoopVanillaPlatform3" parent="DessertPlatforms" instance=ExtResource("6_ax18d")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 4.7500005, -3.9139428, 2.0429988)
+
+[node name="IceCreamScoopVanillaPlatform4" parent="DessertPlatforms" instance=ExtResource("6_ax18d")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 4.8500004, -3.9139428, 1.5929985)
+
+[node name="IceCreamScoopMintPlatform5" parent="DessertPlatforms" instance=ExtResource("5_ex312")]
+transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, 4.7500005, -3.9139428, 1.1679983)
+
+[node name="PuddingMediumPlatform" parent="DessertPlatforms" instance=ExtResource("11_uq727")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 4.4500003, -3.9139428, 0.4429989)
+
+[node name="CookieRotatorPlatforms" type="Node3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 17.1, 1.4999998, -67.100006)
+
+[node name="CookiePlatform" parent="CookieRotatorPlatforms" instance=ExtResource("13_xyh7p")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0.6750002, 0.87500006, 0.5250006)
+
+[node name="CookieChocolatePlatform" parent="CookieRotatorPlatforms" instance=ExtResource("14_4b6n5")]
+transform = Transform3D(11.276312, 0, -4.1042414, 0, 12, 0, 4.1042414, 0, 11.276312, -0.5250001, 0.90000004, -1.4750004)
+
+[node name="CookiePlatform2" parent="CookieRotatorPlatforms" instance=ExtResource("13_xyh7p")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -2.35, 1.4750001, -2.875001)
+
+[node name="CookieChocolatePlatform2" parent="CookieRotatorPlatforms" instance=ExtResource("14_4b6n5")]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -4.625, 1.5, -2.875)
+
+[node name="TallPlatforms" type="Node3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -25.6, 0.79999983, -69.8)
+
+[node name="IceCreamVanillaPlatform" parent="TallPlatforms" instance=ExtResource("15_82l55")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 3.9250002, -0.07499996, -1.4749994)
+
+[node name="IceCreamChocoPlatform" parent="TallPlatforms" instance=ExtResource("16_3s3cj")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 2.9499996, -0.07499996, -0.5)
+
+[node name="IceCreamPlatform" parent="TallPlatforms" instance=ExtResource("17_ogwt2")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 2.1999998, -0.075, 0.75)
+
+[node name="SundaePlatform" parent="TallPlatforms" instance=ExtResource("18_5w1fe")]
+transform = Transform3D(6.5778484, 0, 2.394141, 0, 7, 0, -2.394141, 0, 6.5778484, 1.9249997, -0.07499996, 2.1749992)
+
+[node name="NutcrackerPlatform" parent="TallPlatforms" instance=ExtResource("19_f2hvt")]
+transform = Transform3D(3.4641013, 0, -1.9999999, 0, 4, 0, 1.9999999, 0, 3.4641013, 2.9250002, -0.07499996, 4.799999)
+
+[node name="SnowmanPlatform" parent="TallPlatforms" instance=ExtResource("20_k0ts1")]
+transform = Transform3D(1.9283628, 0, -2.2981334, 0, 3.0000005, 0, 2.2981334, 0, 1.9283628, 1.8000007, -0.07499996, 3.6500006)
+
+[node name="ReindeerPlatform" parent="TallPlatforms" instance=ExtResource("21_s7dn8")]
+transform = Transform3D(1.9485569, 0, -1.1249994, 0, 2.2499998, 0, 1.1249994, 0, 1.9485569, 1.150001, -0.07499996, 5.7000012)
+
+[node name="ReindeerPlatform2" parent="TallPlatforms" instance=ExtResource("21_s7dn8")]
+transform = Transform3D(1.1249998, 0, -1.9485568, 0, 2.2500002, 0, 1.9485568, 0, 1.1249998, 0.34999943, -0.07499996, 1.9499998)
+
+[node name="ReindeerPlatform3" parent="TallPlatforms" instance=ExtResource("21_s7dn8")]
+transform = Transform3D(-1.9485571, 0, -1.1250001, 0, 2.25, 0, 1.1250001, 0, -1.9485571, 2.525, -0.07499996, -2.3250008)
+
+[node name="IceCreamVanillaPlatform2" parent="TallPlatforms" instance=ExtResource("15_82l55")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 1.5999999, -0.07499996, -0.4499998)
+
+[node name="IceCreamPlatform2" parent="TallPlatforms" instance=ExtResource("16_3s3cj")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0.9500003, -0.07499996, 0.5999994)
+
+[node name="ReindeerPlatform4" parent="TallPlatforms" instance=ExtResource("21_s7dn8")]
+transform = Transform3D(-2.25, 0, 2.3841858e-07, 0, 2.25, 0, -2.3841858e-07, 0, -2.25, 4.575, -0.07499996, 2.1500015)
+
+[node name="DonutLiftPlatforms" type="Node3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -2.3, 16.7, -46.5)
+
+[node name="DonutPlatform" parent="DonutLiftPlatforms" instance=ExtResource("22_ank8w")]
+transform = Transform3D(5.638156, 0, -2.0521207, 0, 6, 0, 2.0521207, 0, 5.638156, -2.0249996, 0, 0.025000095)
+
+[node name="DonutSprinklesPlatform" parent="DonutLiftPlatforms" instance=ExtResource("23_cl0p3")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -0.35000002, 0.19999981, 0.4250002)
+
+[node name="DonutChocolatePlatform" parent="DonutLiftPlatforms" instance=ExtResource("24_okvrl")]
+transform = Transform3D(5.638156, 0, 2.0521207, 0, 6, 0, -2.0521207, 0, 5.638156, 1.35, 0.4000001, 0.3499999)
+
+[node name="DonutPlatform2" parent="DonutLiftPlatforms" instance=ExtResource("22_ank8w")]
+transform = Transform3D(5.638156, 0, -2.0521207, 0, 6, 0, 2.0521207, 0, 5.638156, 3, 0.5999999, -0.17499971)
+
+[node name="DonutSprinklesPlatform2" parent="DonutLiftPlatforms" instance=ExtResource("23_cl0p3")]
+transform = Transform3D(5.9088464, 0, 1.0418891, 0, 6, 0, -1.0418891, 0, 5.9088464, 4.25, 0.8000002, -1.3000002)
+
+[node name="DonutChocolatePlatform2" parent="DonutLiftPlatforms" instance=ExtResource("24_okvrl")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 4.825, 1, -2.7750006)
+
+[node name="SeeSawPlatforms" type="Node3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -1.8, 9.6, -24.9)
+
+[node name="WafflePlatform" parent="SeeSawPlatforms" instance=ExtResource("25_u5fym")]
+transform = Transform3D(3.9392304, 0, 0.69459265, 0, 4, 0, -0.69459265, 0, 3.9392304, 4.550001, 3.125, -9.650001)
+
+[node name="ChocolatePlatform" parent="SeeSawPlatforms" instance=ExtResource("26_bnahf")]
+transform = Transform3D(2.226681, 1.2855749, -3.064177, -1.9999998, 3.464101, -4.073701e-08, 2.6536546, 1.5320885, 2.57115, 4.000001, 3.5749998, -10.85)
+
+[node name="WafflePlatform2" parent="SeeSawPlatforms" instance=ExtResource("25_u5fym")]
+transform = Transform3D(1.3680804, 0, 3.7587702, 0, 4, 0, -3.7587702, 0, 1.3680804, 2.825, 3.775, -11.799998)
+
+[node name="ChocolatePlatform2" parent="SeeSawPlatforms" instance=ExtResource("26_bnahf")]
+transform = Transform3D(3.4114738, 1.9696151, -0.6945929, -1.9999998, 3.4641016, -8.20044e-08, 0.60153466, 0.34729636, 3.9392307, 1.65, 4.225, -12.075001)
+
+[node name="WafflePlatform3" parent="SeeSawPlatforms" instance=ExtResource("25_u5fym")]
+transform = Transform3D(3.7587702, 0, 1.3680806, 0, 4, 0, -1.3680806, 0, 3.7587702, -2.175, 5.1, -11.675)
+
+[node name="ChocolatePlatform3" parent="SeeSawPlatforms" instance=ExtResource("26_bnahf")]
+transform = Transform3D(3.4114738, 1.9696153, 0.6945927, -2, 3.4641016, -7.985502e-09, -0.60153496, -0.3472963, 3.9392304, -0.92499995, 4.9249997, -12.025001)
+
+[node name="WafflePlatform4" parent="SeeSawPlatforms" instance=ExtResource("25_u5fym")]
+transform = Transform3D(4, 0, 2.3841858e-07, 0, 4, 0, -2.3841858e-07, 0, 4, 0.32499993, 4.425, -12.249999)
+
+[node name="ChocolatePlatform4" parent="SeeSawPlatforms" instance=ExtResource("26_bnahf")]
+transform = Transform3D(-0.9315655, -0.53783965, 3.8526502, -1.9999995, 3.4641008, 1.2152441e-07, -3.336493, -1.9263252, -1.0756791, -1.9999995, 5.7000003, -10.525001)
+
+[node name="WafflePlatform5" parent="SeeSawPlatforms" instance=ExtResource("25_u5fym")]
+transform = Transform3D(3.939231, 0, -0.6945927, 0, 4, 0, 0.6945927, 0, 3.939231, -1.4249997, 5.725001, -9.150001)
+
+[node name="Decorations" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.5, -15.6)
+
+[node name="Trees" type="Node3D" parent="Decorations"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -45.31395, 0, 6.6407146)
+
+[node name="TreeDecoratedRoot" parent="Decorations/Trees" instance=ExtResource("27_d875j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="TreeDecoratedSnowRoot" parent="Decorations/Trees" instance=ExtResource("28_33yq4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2338953, -4.4703484e-08, 0.35718203)
+
+[node name="TreeSnowARoot" parent="Decorations/Trees" instance=ExtResource("29_h77m4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2084846, 0, 1.636572)
+
+[node name="TreeSnowBRoot" parent="Decorations/Trees" instance=ExtResource("30_d5pwj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13101816, -4.4703484e-08, 1.3930272)
+
+[node name="TreeSnowCRoot" parent="Decorations/Trees" instance=ExtResource("31_7jxy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0638752, -4.4703484e-08, 2.6136131)
+
+[node name="Snow" type="Node3D" parent="Decorations"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -45.713947, 0, 13.040714)
+
+[node name="SnowBunkerRoot" parent="Decorations/Snow" instance=ExtResource("32_6jgcr")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.367143, 0, 2.134067)
+
+[node name="SnowFlatRoot" parent="Decorations/Snow" instance=ExtResource("33_7phwo")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.982292, 0, 2.2162452)
+
+[node name="SnowFlatLargeRoot" parent="Decorations/Snow" instance=ExtResource("34_qv7w3")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.5009172, 0, 2.512603)
+
+[node name="SnowPileRoot" parent="Decorations/Snow" instance=ExtResource("35_h40lo")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.9888904, 2.2351742e-08, 2.6612134)
+
+[node name="CandyCanes" type="Node3D" parent="Decorations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, 0, 0)
+
+[node name="CandyCaneGreen" parent="Decorations/CandyCanes" instance=ExtResource("36_kfacp")]
+
+[node name="CandyCaneRedRoot" parent="Decorations/CandyCanes" instance=ExtResource("37_g42kr")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 2.3000002, 0, -0.3000002)
+
+[node name="Presents" type="Node3D" parent="Decorations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.400002, 0, 0)
+
+[node name="PresentGreenCubeRoot" parent="Decorations/Presents" instance=ExtResource("38_v8jhy")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -12.869919, 0.010705948, 1.0385246)
+
+[node name="PresentGreenRectangleRoot" parent="Decorations/Presents" instance=ExtResource("39_7nru2")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -17.162922, 0.06575823, 0.5405493)
+
+[node name="PresentGreenRoundRoot" parent="Decorations/Presents" instance=ExtResource("40_hh3yc")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -14.368351, -0.008588195, -2.8390121)
+
+[node name="PresentRedCubeRoot" parent="Decorations/Presents" instance=ExtResource("41_2yyv0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -26.847305, 0, -10.290184)
+
+[node name="PresentRedRectangleRoot" parent="Decorations/Presents" instance=ExtResource("42_utan4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -27.38118, 0, -18.27445)
+
+[node name="PresentRedRoundRoot" parent="Decorations/Presents" instance=ExtResource("43_an08g")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -29.697319, 0, -17.852526)
+
+[node name="GingerBreadPeople" type="Node3D" parent="Decorations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2, 0, 0)
+
+[node name="GingerbreadManRoot" parent="Decorations/GingerBreadPeople" instance=ExtResource("44_80wnb")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -6.1000004, 0, 3.8000002)
+
+[node name="GingerBreadRoot" parent="Decorations/GingerBreadPeople" instance=ExtResource("45_ttctv")]
+transform = Transform3D(-1.9670124e-07, 4.4999995, -7.794229, -9, -3.934025e-07, 0, -3.4069657e-07, 7.794229, 4.4999995, -2.9000006, 1.2, 4.8)
+
+[node name="GingerbreadWomanRoot" parent="Decorations/GingerBreadPeople" instance=ExtResource("46_gik33")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -0.5, 0, 4.8)
+
+[node name="HolidayCharacters" type="Node3D" parent="Decorations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.299999, -0.5, 22.300001)
+
+[node name="NutcrackerRoot" parent="Decorations/HolidayCharacters" instance=ExtResource("47_hi3tj")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -21.021324, 0.49999976, -11.836912)
+
+[node name="ReindeerRoot" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -9.194484, 0.5, -10.107426)
+
+[node name="SnowmanHatRoot" parent="Decorations/HolidayCharacters" instance=ExtResource("49_je7g0")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -6.5416, 0.49999976, -9.655069)
