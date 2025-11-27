@@ -15,6 +15,10 @@ run/main_scene="uid://djq3e1h0wsnap"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+AudioStreamPlayer3d="*res://audio_stream_player_3d.tscn"
+
 [input]
 
 move_left={

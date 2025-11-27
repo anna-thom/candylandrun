@@ -19,6 +19,7 @@ background_mode = 2
 sky = SubResource("Sky_ig7tw")
 tonemap_mode = 2
 glow_enabled = true
+fog_enabled = true
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_272bh"]
 emission_shape = 3
