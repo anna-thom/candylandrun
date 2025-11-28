@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_c2p6q"]
 [ext_resource type="Script" uid="uid://88nx8yye31ob" path="res://addons/zylann.hterrain/hterrain.gd" id="1_vly3c"]
-[ext_resource type="Resource" uid="uid://dennxxac0iu7w" path="res://addons/zylann.hterrain/data.hterrain" id="2_ex312"]
+[ext_resource type="Resource" path="res://addons/zylann.hterrain/data.hterrain" id="2_ex312"]
 [ext_resource type="PackedScene" uid="uid://ckwww5wcyeyd2" path="res://scenes/props/candy_corn.tscn" id="2_wpcwq"]
 [ext_resource type="PackedScene" uid="uid://cccn5a6xtgdpy" path="res://scenes/platforms/cake_platform.tscn" id="3_1cico"]
 [ext_resource type="Script" uid="uid://bxcci3gaqnku1" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_ax18d"]

@@ -36,17 +36,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 
-[node name="Button" type="Button" parent="."]
+[node name="Button_0" type="Button" parent="."]
 offset_left = 31.0
 offset_top = 92.0
 offset_right = 167.0
 offset_bottom = 227.0
 
-[node name="Button2" type="Button" parent="."]
+[node name="Button_1" type="Button" parent="."]
 offset_left = 873.0
 offset_top = 91.0
 offset_right = 1139.0
 offset_bottom = 242.0
 
-[connection signal="pressed" from="Button" to="BootsComponent" method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="BootsComponent" method="_on_button_2_pressed"]
+[node name="Button_2" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="Button_0" to="BootsComponent" method="_on_button_0_pressed"]
+[connection signal="pressed" from="Button_1" to="BootsComponent" method="_on_button_1_pressed"]
+[connection signal="pressed" from="Button_2" to="BootsComponent" method="_on_button_2_pressed"]
