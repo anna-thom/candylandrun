@@ -1,8 +1,11 @@
-[gd_scene load_steps=63 format=3 uid="uid://djq3e1h0wsnap"]
+[gd_scene load_steps=62 format=3 uid="uid://djq3e1h0wsnap"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_c2p6q"]
+[ext_resource type="Script" uid="uid://88nx8yye31ob" path="res://addons/zylann.hterrain/hterrain.gd" id="1_vly3c"]
+[ext_resource type="Resource" uid="uid://dennxxac0iu7w" path="res://addons/zylann.hterrain/data.hterrain" id="2_ex312"]
 [ext_resource type="PackedScene" uid="uid://ckwww5wcyeyd2" path="res://scenes/props/candy_corn.tscn" id="2_wpcwq"]
 [ext_resource type="PackedScene" uid="uid://cccn5a6xtgdpy" path="res://scenes/platforms/cake_platform.tscn" id="3_1cico"]
+[ext_resource type="Script" uid="uid://bxcci3gaqnku1" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_ax18d"]
 [ext_resource type="PackedScene" uid="uid://c4hp8i1q4le26" path="res://scenes/platforms/ice_cream_scoop_choco_platform.tscn" id="4_vly3c"]
 [ext_resource type="PackedScene" uid="uid://cmrwvybaqirc7" path="res://scenes/platforms/ice_cream_scoop_mint_platform.tscn" id="5_ex312"]
 [ext_resource type="PackedScene" uid="uid://4gd3xoq52pam" path="res://scenes/platforms/ice_cream_scoop_vanilla_platform.tscn" id="6_ax18d"]
@@ -32,8 +35,6 @@
 [ext_resource type="PackedScene" uid="uid://bp37ju8twhhpk" path="res://scenes/props/tree_snow_b.tscn" id="30_d5pwj"]
 [ext_resource type="PackedScene" uid="uid://bsee4b8lgg8xd" path="res://scenes/props/tree_snow_c.tscn" id="31_7jxy1"]
 [ext_resource type="PackedScene" uid="uid://bnj4khwhhopnq" path="res://scenes/props/snow_bunker.tscn" id="32_6jgcr"]
-[ext_resource type="PackedScene" uid="uid://bbyvwyopofp51" path="res://scenes/props/snow_flat.tscn" id="33_7phwo"]
-[ext_resource type="PackedScene" uid="uid://doceb45ovx786" path="res://scenes/props/snow_flat_large.tscn" id="34_qv7w3"]
 [ext_resource type="PackedScene" uid="uid://t5b3u18cqnnw" path="res://scenes/props/snow_pile.tscn" id="35_h40lo"]
 [ext_resource type="PackedScene" uid="uid://cdmw48psl1xep" path="res://scenes/props/candy_cane_green.tscn" id="36_kfacp"]
 [ext_resource type="PackedScene" uid="uid://dgcy02mf1grue" path="res://scenes/props/candy_cane_red.tscn" id="37_g42kr"]
@@ -49,6 +50,11 @@
 [ext_resource type="PackedScene" uid="uid://tbcl4jqj4ud4" path="res://scenes/props/nutcracker.tscn" id="47_hi3tj"]
 [ext_resource type="PackedScene" uid="uid://d38lk7fp2qff3" path="res://scenes/props/reindeer.tscn" id="48_sp5li"]
 [ext_resource type="PackedScene" uid="uid://ctp5j0mwufud4" path="res://scenes/props/snowman_hat.tscn" id="49_je7g0"]
+
+[sub_resource type="Resource" id="Resource_rfdry"]
+script = ExtResource("3_ax18d")
+mode = 0
+textures = [[], []]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -67,23 +73,6 @@ fog_light_color = Color(0.81700003, 0.86576664, 0.95, 1)
 fog_sun_scatter = 0.5
 fog_density = 0.001
 fog_sky_affect = 0.7
-
-[sub_resource type="BoxMesh" id="BoxMesh_c2p6q"]
-size = Vector3(150, 1, 150)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wpcwq"]
-resource_name = "snow"
-cull_mode = 2
-albedo_color = Color(0.8118264, 0.8503239, 1, 1)
-roughness = 0.8
-emission_enabled = true
-emission = Color(0.4506483, 0.4506483, 0.45064825, 1)
-rim_enabled = true
-rim = 0.3
-rim_tint = 0.1
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_c2p6q"]
-size = Vector3(150, 1, 150)
 
 [sub_resource type="Gradient" id="Gradient_1cico"]
 offsets = PackedFloat32Array(0, 0.49659863, 1)
@@ -133,6 +122,27 @@ material = SubResource("StandardMaterial3D_5vw27")
 
 [node name="Main" type="Node3D"]
 
+[node name="SnowTerrain" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, -2.67, -168.3)
+script = ExtResource("1_vly3c")
+centered = true
+_terrain_data = ExtResource("2_ex312")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_rfdry")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+metadata/_custom_type_script = "uid://88nx8yye31ob"
+
 [node name="Environment" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -88.30002)
 
@@ -145,17 +155,6 @@ light_color = Color(1, 0.9647059, 0.8980392, 1)
 shadow_enabled = true
 shadow_bias = 0.05
 shadow_opacity = 0.4
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Environment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40)
-
-[node name="Floor" type="MeshInstance3D" parent="Environment/StaticBody3D"]
-mesh = SubResource("BoxMesh_c2p6q")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_wpcwq")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/StaticBody3D"]
-shape = SubResource("BoxShape3D_c2p6q")
 
 [node name="SnowParticles" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -88.30002)
@@ -173,6 +172,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40)
 size = Vector3(150, 1, 150)
 
 [node name="ProtoController" parent="." instance=ExtResource("1_c2p6q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6, 2)
 can_freefly = true
 jump_velocity = 10.0
 sprint_speed = 20.0
@@ -183,10 +183,10 @@ input_back = "move_down"
 input_jump = "jump"
 
 [node name="CandyCorn" parent="." instance=ExtResource("2_wpcwq")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 16.155771, -60.771996)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 17.55577, -60.771996)
 
 [node name="DessertPlatforms" type="Node3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 16.155771, -60.771996)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 17.55577, -60.771996)
 
 [node name="CakePlatform" parent="DessertPlatforms" instance=ExtResource("3_1cico")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.79999995, -3.9139428, 3.6429992)
@@ -204,16 +204,16 @@ transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 1.925, -3.9139428, 3.61
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 2.175, -3.9139428, 3.967999)
 
 [node name="IceCreamScoopChocoPlatform" parent="DessertPlatforms" instance=ExtResource("4_vly3c")]
-transform = Transform3D(3.939231, 0, 0.6945927, 0, 4, 0, -0.6945927, 0, 3.939231, 2.15, -3.9139428, 3.1429987)
+transform = Transform3D(3.9392307, 0, 0.6945927, 0, 4, 0, -0.6945927, 0, 3.9392307, 2.15, -3.9139428, 3.1429987)
 
 [node name="IceCreamScoopMintPlatform2" parent="DessertPlatforms" instance=ExtResource("5_ex312")]
 transform = Transform3D(2.8145823, 0, 1.6249999, 0, 3.2499998, 0, -1.6249999, 0, 2.8145823, 2.425, -3.9139428, 3.4929986)
 
 [node name="CandyBarPlatform" parent="DessertPlatforms" instance=ExtResource("7_rfdry")]
-transform = Transform3D(0.20647615, -0.17081219, 1.9819663, 1.274848, 1.5410265, -6.388958e-08, -1.5271311, 1.2633528, 0.26797217, 2.675, -3.7389426, 3.9429984)
+transform = Transform3D(0.20647623, -0.17081225, 1.9819661, 1.274848, 1.5410264, 1.8118915e-07, -1.5271311, 1.2633529, 0.2679725, 2.675, -3.7389426, 3.9429984)
 
 [node name="CupcakePlatform" parent="DessertPlatforms" instance=ExtResource("8_sssyf")]
-transform = Transform3D(2.7082212, 0, -0.4775325, 0, 2.75, 0, 0.4775325, 0, 2.7082212, 2.8, -3.9139428, 2.9179993)
+transform = Transform3D(2.7082212, 0, -0.47753254, 0, 2.75, 0, 0.47753254, 0, 2.7082212, 2.8, -3.9139428, 2.9179993)
 
 [node name="CakePlatform2" parent="DessertPlatforms" instance=ExtResource("3_1cico")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 3.225, -3.9139428, 3.592999)
@@ -246,7 +246,7 @@ transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, 4.7500005, -3.913942
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 4.4500003, -3.9139428, 0.4429989)
 
 [node name="CookieRotatorPlatforms" type="Node3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 17.1, 1.4999998, -67.100006)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 17.1, 2.8999999, -67.100006)
 
 [node name="CookiePlatform" parent="CookieRotatorPlatforms" instance=ExtResource("13_xyh7p")]
 transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0.6750002, 0.87500006, 0.5250006)
@@ -261,7 +261,7 @@ transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -2.35, 1.4750001, -2.875001)
 transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -4.625, 1.5, -2.875)
 
 [node name="TallPlatforms" type="Node3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -25.6, 0.79999983, -69.8)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -25.6, 2.2, -69.8)
 
 [node name="IceCreamVanillaPlatform" parent="TallPlatforms" instance=ExtResource("15_82l55")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 3.9250002, -0.07499996, -1.4749994)
@@ -285,7 +285,7 @@ transform = Transform3D(1.9283628, 0, -2.2981334, 0, 3.0000005, 0, 2.2981334, 0,
 transform = Transform3D(1.9485569, 0, -1.1249994, 0, 2.2499998, 0, 1.1249994, 0, 1.9485569, 1.150001, -0.07499996, 5.7000012)
 
 [node name="ReindeerPlatform2" parent="TallPlatforms" instance=ExtResource("21_s7dn8")]
-transform = Transform3D(1.1249998, 0, -1.9485568, 0, 2.2500002, 0, 1.9485568, 0, 1.1249998, 0.34999943, -0.07499996, 1.9499998)
+transform = Transform3D(1.1249998, 0, -1.9485568, 0, 2.2500002, 0, 1.9485568, 0, 1.1249998, 0.34999943, -0.17499995, 1.9499998)
 
 [node name="ReindeerPlatform3" parent="TallPlatforms" instance=ExtResource("21_s7dn8")]
 transform = Transform3D(-1.9485571, 0, -1.1250001, 0, 2.25, 0, 1.1250001, 0, -1.9485571, 2.525, -0.07499996, -2.3250008)
@@ -300,7 +300,7 @@ transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0.9500003, -0.07499996, 0.599
 transform = Transform3D(-2.25, 0, 2.3841858e-07, 0, 2.25, 0, -2.3841858e-07, 0, -2.25, 4.575, -0.07499996, 2.1500015)
 
 [node name="DonutLiftPlatforms" type="Node3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -2.3, 16.7, -46.5)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -2.3, 18.1, -46.5)
 
 [node name="DonutPlatform" parent="DonutLiftPlatforms" instance=ExtResource("22_ank8w")]
 transform = Transform3D(5.638156, 0, -2.0521207, 0, 6, 0, 2.0521207, 0, 5.638156, -2.0249996, 0, 0.025000095)
@@ -321,7 +321,7 @@ transform = Transform3D(5.9088464, 0, 1.0418891, 0, 6, 0, -1.0418891, 0, 5.90884
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 4.825, 1, -2.7750006)
 
 [node name="SeeSawPlatforms" type="Node3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -1.8, 9.6, -24.9)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -1.8, 11.000001, -24.9)
 
 [node name="WafflePlatform" parent="SeeSawPlatforms" instance=ExtResource("25_u5fym")]
 transform = Transform3D(3.9392304, 0, 0.69459265, 0, 4, 0, -0.69459265, 0, 3.9392304, 4.550001, 3.125, -9.650001)
@@ -354,87 +354,622 @@ transform = Transform3D(3.939231, 0, -0.6945927, 0, 4, 0, 0.6945927, 0, 3.939231
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.5, -15.6)
 
 [node name="Trees" type="Node3D" parent="Decorations"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -45.31395, 0, 6.6407146)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.31395, 0, 6.6407146)
+
+[node name="TreeDecorated" parent="Decorations/Trees" instance=ExtResource("27_d875j")]
+transform = Transform3D(4.698463, 0, 1.7101007, 0, 5, 0, -1.7101007, 0, 4.698463, 21.599998, 2, -93.09999)
+
+[node name="TreeDecoratedSnow" parent="Decorations/Trees" instance=ExtResource("28_33yq4")]
+transform = Transform3D(3.8302221, 0, 3.2139378, 0, 5, 0, -3.2139378, 0, 3.8302221, -10.733894, 2.8999999, -103.74281)
+
+[node name="TreeSnowA" parent="Decorations/Trees" instance=ExtResource("29_h77m4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -5.9084854, 1.9000001, -107.363434)
+
+[node name="TreeSnowB" parent="Decorations/Trees" instance=ExtResource("30_d5pwj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 10.36898, 0.6999999, -108.70697)
+
+[node name="TreeSnowC" parent="Decorations/Trees" instance=ExtResource("31_7jxy1")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 4.536125, 1, -98.98639)
+
+[node name="TreeSnowA2" parent="Decorations/Trees" instance=ExtResource("29_h77m4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 21.162788, 1.4, -106.40814)
+
+[node name="TreeSnowB2" parent="Decorations/Trees" instance=ExtResource("30_d5pwj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 11.262791, 1.8000002, -93.848145)
+
+[node name="TreeSnowC2" parent="Decorations/Trees" instance=ExtResource("31_7jxy1")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -3.0372086, 1, -91.848145)
+
+[node name="TreeSnowA3" parent="Decorations/Trees" instance=ExtResource("29_h77m4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 6.7400017, 0, -78)
+
+[node name="TreeSnowB3" parent="Decorations/Trees" instance=ExtResource("30_d5pwj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 31.5, 1.9000001, -93.53999)
+
+[node name="TreeSnowC3" parent="Decorations/Trees" instance=ExtResource("31_7jxy1")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 39.300003, 1.3999999, -101.399994)
 
 [node name="TreeDecoratedRoot" parent="Decorations/Trees" instance=ExtResource("27_d875j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(3.8302221, 0, -3.2139378, 0, 5, 0, 3.2139378, 0, 3.8302221, 113.21395, 2, -98.94072)
 
 [node name="TreeDecoratedSnowRoot" parent="Decorations/Trees" instance=ExtResource("28_33yq4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2338953, -4.4703484e-08, 0.35718203)
+transform = Transform3D(3.8302221, 0, -3.2139378, 0, 5, 0, 3.2139378, 0, 3.8302221, 107.21395, 0, -84.34071)
 
 [node name="TreeSnowARoot" parent="Decorations/Trees" instance=ExtResource("29_h77m4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2084846, 0, 1.636572)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 100.11395, 1.1, -101.94072)
 
 [node name="TreeSnowBRoot" parent="Decorations/Trees" instance=ExtResource("30_d5pwj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13101816, -4.4703484e-08, 1.3930272)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 82.21395, 1.4, -100.04071)
 
 [node name="TreeSnowCRoot" parent="Decorations/Trees" instance=ExtResource("31_7jxy1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0638752, -4.4703484e-08, 2.6136131)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 65.71395, 1.3000001, -95.54071)
+
+[node name="TreeSnowARoot2" parent="Decorations/Trees" instance=ExtResource("29_h77m4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 59.71395, 1.4, -88.44072)
+
+[node name="TreeSnowBRoot2" parent="Decorations/Trees" instance=ExtResource("30_d5pwj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 118.81395, 1.3000001, -66.04071)
+
+[node name="TreeSnowCRoot2" parent="Decorations/Trees" instance=ExtResource("31_7jxy1")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 97.913956, 2.8, -46.540714)
+
+[node name="TreeSnowARoot3" parent="Decorations/Trees" instance=ExtResource("29_h77m4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 91.51395, 2.4, -27.440716)
+
+[node name="TreeSnowBRoot3" parent="Decorations/Trees" instance=ExtResource("30_d5pwj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 117.31395, 2, -31.540714)
+
+[node name="TreeSnowCRoot3" parent="Decorations/Trees" instance=ExtResource("31_7jxy1")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 94.51395, 2.1000001, -3.1407146)
+
+[node name="TreeSnowARoot4" parent="Decorations/Trees" instance=ExtResource("29_h77m4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 112.71395, 1.5, -5.5407143)
+
+[node name="TreeSnowBRoot4" parent="Decorations/Trees" instance=ExtResource("30_d5pwj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 103.11395, 1.9000001, -0.94071484)
+
+[node name="TreeSnowCRoot4" parent="Decorations/Trees" instance=ExtResource("31_7jxy1")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 82.91395, 2.8, -1.4407148)
+
+[node name="TreeSnowARoot5" parent="Decorations/Trees" instance=ExtResource("29_h77m4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 103.71394, 0.79999995, 29.259285)
+
+[node name="TreeSnowBRoot5" parent="Decorations/Trees" instance=ExtResource("30_d5pwj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 126.61395, 0.70000005, -4.1407146)
+
+[node name="TreeSnowCRoot5" parent="Decorations/Trees" instance=ExtResource("31_7jxy1")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 100.11395, 2.2, 9.559286)
+
+[node name="TreeDecoratedRoot2" parent="Decorations/Trees" instance=ExtResource("27_d875j")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 103.11395, 2.3, -18.840715)
+
+[node name="TreeDecoratedSnowRoot2" parent="Decorations/Trees" instance=ExtResource("28_33yq4")]
+transform = Transform3D(1.7101008, 0, -4.698463, 0, 5, 0, 4.698463, 0, 1.7101008, 117.31395, 1.9000001, -50.340714)
+
+[node name="TreeDecoratedRoot3" parent="Decorations/Trees" instance=ExtResource("27_d875j")]
+transform = Transform3D(2.3841858e-07, 0, -5, 0, 4.9999995, 0, 5, 0, 2.3841858e-07, 122.41395, 1.4, 27.959288)
+
+[node name="TreeDecoratedSnowRoot3" parent="Decorations/Trees" instance=ExtResource("28_33yq4")]
+transform = Transform3D(-0.86824036, 0, -4.924039, 0, 4.9999995, 0, 4.924039, 0, -0.86824036, 88.31395, 1.8000002, 19.959286)
+
+[node name="TreeDecoratedRoot4" parent="Decorations/Trees" instance=ExtResource("27_d875j")]
+transform = Transform3D(1.7101008, 0, 4.698463, 0, 5, 0, -4.698463, 0, 1.7101008, -9.486053, 1.4, -17.840714)
+
+[node name="TreeDecoratedSnowRoot4" parent="Decorations/Trees" instance=ExtResource("28_33yq4")]
+transform = Transform3D(1.7101008, 0, 4.698463, 0, 5, 0, -4.698463, 0, 1.7101008, -8.386047, 1.5, -57.040714)
+
+[node name="TreeDecoratedRoot5" parent="Decorations/Trees" instance=ExtResource("27_d875j")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, -6.1860504, 0.79999995, 24.559286)
+
+[node name="TreeDecoratedSnowRoot5" parent="Decorations/Trees" instance=ExtResource("28_33yq4")]
+transform = Transform3D(2.4999998, 0, 4.3301272, 0, 5, 0, -4.3301272, 0, 2.4999998, 17.01395, 1.8000002, 8.059286)
+
+[node name="TreeSnowARoot6" parent="Decorations/Trees" instance=ExtResource("29_h77m4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 46.21395, 0.5, 26.059286)
+
+[node name="TreeSnowBRoot6" parent="Decorations/Trees" instance=ExtResource("30_d5pwj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -6.4860497, 0.70000005, 17.859285)
+
+[node name="TreeSnowCRoot6" parent="Decorations/Trees" instance=ExtResource("31_7jxy1")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 1.7139473, 1.7, -3.1407146)
+
+[node name="TreeSnowARoot7" parent="Decorations/Trees" instance=ExtResource("29_h77m4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -12.886055, 0.6, -28.240715)
+
+[node name="TreeSnowBRoot7" parent="Decorations/Trees" instance=ExtResource("30_d5pwj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 12.51395, 2, -37.240715)
+
+[node name="TreeSnowCRoot7" parent="Decorations/Trees" instance=ExtResource("31_7jxy1")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 25.613949, 2.2, -8.740715)
+
+[node name="TreeSnowARoot8" parent="Decorations/Trees" instance=ExtResource("29_h77m4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 18.51395, 0.79999995, 22.659285)
+
+[node name="TreeSnowBRoot8" parent="Decorations/Trees" instance=ExtResource("30_d5pwj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 23.81395, 1, 26.759287)
+
+[node name="TreeSnowCRoot8" parent="Decorations/Trees" instance=ExtResource("31_7jxy1")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 29.41395, 0, 20.859285)
+
+[node name="TreeSnowARoot9" parent="Decorations/Trees" instance=ExtResource("29_h77m4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 13.013947, 0.79999995, 23.959286)
+
+[node name="TreeSnowBRoot9" parent="Decorations/Trees" instance=ExtResource("30_d5pwj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -5.386051, 1.4, -36.440716)
+
+[node name="TreeSnowCRoot9" parent="Decorations/Trees" instance=ExtResource("31_7jxy1")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 18.213947, 2, -26.340714)
+
+[node name="TreeSnowARoot10" parent="Decorations/Trees" instance=ExtResource("29_h77m4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 4.3139496, 2.1000001, -20.340715)
+
+[node name="TreeSnowBRoot10" parent="Decorations/Trees" instance=ExtResource("30_d5pwj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 115.51395, 0.6, 24.159285)
+
+[node name="TreeSnowCRoot10" parent="Decorations/Trees" instance=ExtResource("31_7jxy1")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 111.01395, 1.6000001, -65.24072)
+
+[node name="TreeSnowARoot11" parent="Decorations/Trees" instance=ExtResource("29_h77m4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 122.61395, 1.1, -58.540714)
+
+[node name="TreeSnowARoot12" parent="Decorations/Trees" instance=ExtResource("29_h77m4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 103.913956, 1.7, -49.940716)
+
+[node name="TreeSnowARoot13" parent="Decorations/Trees" instance=ExtResource("29_h77m4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 126.31395, 0.5, -35.740715)
+
+[node name="TreeSnowBRoot11" parent="Decorations/Trees" instance=ExtResource("30_d5pwj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 119.61395, 0.70000005, -15.540714)
+
+[node name="TreeSnowCRoot11" parent="Decorations/Trees" instance=ExtResource("31_7jxy1")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 90.81395, 1.5, -89.24072)
+
+[node name="TreeSnowARoot14" parent="Decorations/Trees" instance=ExtResource("29_h77m4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 72.11395, 0.9000001, -106.04071)
+
+[node name="TreeSnowBRoot12" parent="Decorations/Trees" instance=ExtResource("30_d5pwj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 121.81395, 0.100000024, -97.84071)
+
+[node name="TreeSnowCRoot12" parent="Decorations/Trees" instance=ExtResource("31_7jxy1")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 117.31395, 0.6, -88.14072)
+
+[node name="TreeSnowARoot15" parent="Decorations/Trees" instance=ExtResource("29_h77m4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 70.71395, 0.79999995, 28.559286)
+
+[node name="TreeSnowBRoot13" parent="Decorations/Trees" instance=ExtResource("30_d5pwj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 56.71395, 0.6, 29.459284)
+
+[node name="TreeSnowCRoot13" parent="Decorations/Trees" instance=ExtResource("31_7jxy1")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 62.01395, 0.79999995, 23.759287)
+
+[node name="TreeSnowARoot16" parent="Decorations/Trees" instance=ExtResource("29_h77m4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 19.413948, 2.1000001, -35.240715)
+
+[node name="TreeSnowARoot17" parent="Decorations/Trees" instance=ExtResource("29_h77m4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 124.61395, 0.70000005, 5.259286)
+
+[node name="TreeSnowBRoot14" parent="Decorations/Trees" instance=ExtResource("30_d5pwj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 118.61395, 0.70000005, 7.759286)
+
+[node name="TreeSnowCRoot14" parent="Decorations/Trees" instance=ExtResource("31_7jxy1")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 120.61395, 0.70000005, -3.740714)
+
+[node name="TreeSnowBRoot15" parent="Decorations/Trees" instance=ExtResource("30_d5pwj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 126.513954, 0.70000005, -13.340715)
+
+[node name="TreeSnowCRoot15" parent="Decorations/Trees" instance=ExtResource("31_7jxy1")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 123.513954, 0.9000001, 18.059284)
+
+[node name="TreeSnowARoot18" parent="Decorations/Trees" instance=ExtResource("29_h77m4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 128.51395, 1.5999999, 14.359285)
 
 [node name="Snow" type="Node3D" parent="Decorations"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -45.713947, 0, 13.040714)
-
-[node name="SnowBunkerRoot" parent="Decorations/Snow" instance=ExtResource("32_6jgcr")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.367143, 0, 2.134067)
-
-[node name="SnowFlatRoot" parent="Decorations/Snow" instance=ExtResource("33_7phwo")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.982292, 0, 2.2162452)
-
-[node name="SnowFlatLargeRoot" parent="Decorations/Snow" instance=ExtResource("34_qv7w3")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.5009172, 0, 2.512603)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.713947, 0, 13.040714)
 
 [node name="SnowPileRoot" parent="Decorations/Snow" instance=ExtResource("35_h40lo")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.9888904, 2.2351742e-08, 2.6612134)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.488892, 2.1000001, -32.43879)
+
+[node name="SnowBunkerRoot" parent="Decorations/Snow" instance=ExtResource("32_6jgcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.267139, 1.7000003, -45.16593)
+
+[node name="SnowBunkerRoot2" parent="Decorations/Snow" instance=ExtResource("32_6jgcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.113945, 2.1000001, -105.04071)
+
+[node name="SnowBunkerRoot3" parent="Decorations/Snow" instance=ExtResource("32_6jgcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.513947, 1.6000001, -109.64072)
+
+[node name="SnowBunkerRoot4" parent="Decorations/Snow" instance=ExtResource("32_6jgcr")]
+transform = Transform3D(0.64278764, 0, 0.76604444, 0, 1, 0, -0.76604444, 0, 0.64278764, -0.2860527, 1.4, -96.14072)
+
+[node name="SnowBunkerRoot5" parent="Decorations/Snow" instance=ExtResource("32_6jgcr")]
+transform = Transform3D(0.76604444, 0, -0.6427876, 0, 1, 0, 0.6427876, 0, 0.76604444, 17.813946, 2.2000003, -95.04071)
+
+[node name="SnowBunkerRoot6" parent="Decorations/Snow" instance=ExtResource("32_6jgcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.313946, 1.3000001, -103.34071)
+
+[node name="SnowBunkerRoot7" parent="Decorations/Snow" instance=ExtResource("32_6jgcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.61395, 1.1, -88.04071)
+
+[node name="SnowBunkerRoot8" parent="Decorations/Snow" instance=ExtResource("32_6jgcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.61395, 3, -48.540718)
+
+[node name="SnowBunkerRoot9" parent="Decorations/Snow" instance=ExtResource("32_6jgcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122.71394, 1.5999999, -34.640717)
+
+[node name="SnowBunkerRoot10" parent="Decorations/Snow" instance=ExtResource("32_6jgcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.71394, 2.5, -31.640715)
+
+[node name="SnowBunkerRoot11" parent="Decorations/Snow" instance=ExtResource("32_6jgcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2860527, 3.1000001, -66.34071)
+
+[node name="SnowBunkerRoot12" parent="Decorations/Snow" instance=ExtResource("32_6jgcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9860535, 1, 11.459287)
 
 [node name="CandyCanes" type="Node3D" parent="Decorations"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, 0, 0)
 
 [node name="CandyCaneGreen" parent="Decorations/CandyCanes" instance=ExtResource("36_kfacp")]
+transform = Transform3D(-0.98480767, 0.17364818, 8.742278e-08, 0.17364818, 0.98480767, 0, -8.6094616e-08, 1.5180806e-08, -1, 16.6, 1.9000001, -25.000006)
+
+[node name="CandyCaneRed" parent="Decorations/CandyCanes" instance=ExtResource("37_g42kr")]
+transform = Transform3D(-8.457233, -3.078181, 7.86805e-07, -3.078181, 8.457233, 0, -7.3935485e-07, -2.6910314e-07, -9, 17.900002, 1.9000001, -21.600004)
+
+[node name="CandyCaneGreen2" parent="Decorations/CandyCanes" instance=ExtResource("36_kfacp")]
+transform = Transform3D(-0.93969256, 0.3420201, 8.742278e-08, 0.3420201, 0.93969256, 0, -8.215053e-08, 2.9900345e-08, -1, 17.7, 1.9000001, -18.900003)
+
+[node name="CandyCaneRed2" parent="Decorations/CandyCanes" instance=ExtResource("37_g42kr")]
+transform = Transform3D(-9, 4.7683716e-07, 7.86805e-07, 4.7683716e-07, 9, 0, -7.86805e-07, 4.1686432e-14, -9, 17.5, 1.8000002, -15.800001)
+
+[node name="CandyCaneGreen3" parent="Decorations/CandyCanes" instance=ExtResource("36_kfacp")]
+transform = Transform3D(-0.93969256, 0.3420201, 8.742278e-08, 0.3420201, 0.93969256, 0, -8.215053e-08, 2.9900345e-08, -1, 16.400002, 1.9000001, -12.600002)
+
+[node name="CandyCaneRed3" parent="Decorations/CandyCanes" instance=ExtResource("37_g42kr")]
+transform = Transform3D(-7.794228, -4.499999, 7.86805e-07, -4.499999, 7.794228, 0, -6.8139303e-07, -3.9340242e-07, -9, 20.100002, 1.8000002, -9.299999)
+
+[node name="CandyCaneGreen4" parent="Decorations/CandyCanes" instance=ExtResource("36_kfacp")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 18.3, 2.0000002, -5.5999985)
+
+[node name="CandyCaneRed4" parent="Decorations/CandyCanes" instance=ExtResource("37_g42kr")]
+transform = Transform3D(-8.86327, 1.5628338, 7.86805e-07, 1.5628338, 8.86327, 0, -7.748516e-07, 1.3662726e-07, -9, 18, 2.0000002, -2.1000004)
+
+[node name="CandyCaneGreen5" parent="Decorations/CandyCanes" instance=ExtResource("36_kfacp")]
+transform = Transform3D(-0.98480767, -0.17364818, 8.742278e-08, -0.17364818, 0.98480767, 0, -8.6094616e-08, -1.5180806e-08, -1, 17.9, 2.1000001, 1.3000002)
+
+[node name="CandyCaneRed5" parent="Decorations/CandyCanes" instance=ExtResource("37_g42kr")]
+transform = Transform3D(-8.457233, -3.078181, 7.86805e-07, -3.078181, 8.457233, 0, -7.3935485e-07, -2.6910314e-07, -9, 20.8, 2.1000001, 4.6000004)
+
+[node name="CandyCaneGreen6" parent="Decorations/CandyCanes" instance=ExtResource("36_kfacp")]
+transform = Transform3D(-0.93969256, 0.3420201, 8.742278e-08, 0.3420201, 0.93969256, 0, -8.215053e-08, 2.9900345e-08, -1, 18.3, 1.8000002, 8.4)
+
+[node name="CandyCaneRed6" parent="Decorations/CandyCanes" instance=ExtResource("37_g42kr")]
+transform = Transform3D(-8.457232, -3.0781808, 7.86805e-07, -3.0781808, 8.457232, 0, -7.3935473e-07, -2.691031e-07, -9, 19, 1.7, 12.1)
+
+[node name="CandyCaneGreen7" parent="Decorations/CandyCanes" instance=ExtResource("36_kfacp")]
+transform = Transform3D(-0.9848077, 0.17364815, -8.609463e-08, 0.17364815, 0.9848077, -1.5180808e-08, 8.2150535e-08, -2.990035e-08, -1, 18.6, 1.8000002, 15.200001)
+
+[node name="CandyCaneGreen8" parent="Decorations/CandyCanes" instance=ExtResource("36_kfacp")]
+transform = Transform3D(0.9396926, 0.34202012, 0, -0.34202012, 0.9396926, 0, 0, 0, 1, 30.2, 1.5, -24.9)
 
 [node name="CandyCaneRedRoot" parent="Decorations/CandyCanes" instance=ExtResource("37_g42kr")]
-transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 2.3000002, 0, -0.3000002)
+transform = Transform3D(8.86327, -1.5628335, 0, 1.5628335, 8.86327, 0, 0, 0, 9, 30.300001, 1.6000001, -21.9)
+
+[node name="CandyCaneGreen9" parent="Decorations/CandyCanes" instance=ExtResource("36_kfacp")]
+transform = Transform3D(0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 0, 0, 1, 31, 1.7, -19.300001)
+
+[node name="CandyCaneRedRoot2" parent="Decorations/CandyCanes" instance=ExtResource("37_g42kr")]
+transform = Transform3D(7.7942286, 4.5, 0, -4.5, 7.7942286, 0, 0, 0, 9, 31.1, 1.9000001, -16.3)
+
+[node name="CandyCaneGreen10" parent="Decorations/CandyCanes" instance=ExtResource("36_kfacp")]
+transform = Transform3D(0.9396926, 0.34202012, 0, -0.34202012, 0.9396926, 0, 0, 0, 1, 31.300001, 1.9000001, -12.299999)
+
+[node name="CandyCaneRedRoot3" parent="Decorations/CandyCanes" instance=ExtResource("37_g42kr")]
+transform = Transform3D(8.457233, -3.078181, 0, 3.078181, 8.457233, 0, 0, 0, 9, 31.7, 2.0000002, -9.200001)
+
+[node name="CandyCaneGreen11" parent="Decorations/CandyCanes" instance=ExtResource("36_kfacp")]
+transform = Transform3D(0.76604444, 0.6427876, 0, -0.6427876, 0.76604444, 0, 0, 0, 1, 32.3, 2.1000001, -5.799999)
+
+[node name="CandyCaneRedRoot4" parent="Decorations/CandyCanes" instance=ExtResource("37_g42kr")]
+transform = Transform3D(8.86327, 1.5628335, 0, -1.5628335, 8.86327, 0, 0, 0, 9, 32.1, 2.1000001, -2.2000008)
+
+[node name="CandyCaneGreen12" parent="Decorations/CandyCanes" instance=ExtResource("36_kfacp")]
+transform = Transform3D(0.9396926, -0.34202012, 0, 0.34202012, 0.9396926, 0, 0, 0, 1, 32.9, 2.1000001, 1)
+
+[node name="CandyCaneRedRoot5" parent="Decorations/CandyCanes" instance=ExtResource("37_g42kr")]
+transform = Transform3D(8.86327, -1.5628335, 0, 1.5628335, 8.86327, 0, 0, 0, 9, 32.6, 2.0000002, 4.5)
+
+[node name="CandyCaneGreen13" parent="Decorations/CandyCanes" instance=ExtResource("36_kfacp")]
+transform = Transform3D(0.9848077, -0.17364818, 0, 0.17364818, 0.9848077, 0, 0, 0, 1, 32.7, 2.1000001, 8.1)
+
+[node name="CandyCaneRedRoot6" parent="Decorations/CandyCanes" instance=ExtResource("37_g42kr")]
+transform = Transform3D(8.457233, -3.078181, 0, 3.078181, 8.457233, 0, 0, 0, 9, 32.9, 1.4, 11.6)
+
+[node name="CandyCaneGreen14" parent="Decorations/CandyCanes" instance=ExtResource("36_kfacp")]
+transform = Transform3D(0.9848077, -0.17364818, 0, 0.17364818, 0.9848077, 0, 0, 0, 1, 33.2, 2.0000002, 15)
 
 [node name="Presents" type="Node3D" parent="Decorations"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.400002, 0, 0)
 
 [node name="PresentGreenCubeRoot" parent="Decorations/Presents" instance=ExtResource("38_v8jhy")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -12.869919, 0.010705948, 1.0385246)
+transform = Transform3D(3.2139382, 0, -3.8302221, 0, 5, 0, 3.8302221, 0, 3.2139382, -37.469917, 0.010705948, -96.06148)
 
 [node name="PresentGreenRectangleRoot" parent="Decorations/Presents" instance=ExtResource("39_7nru2")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -17.162922, 0.06575823, 0.5405493)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -27.06292, 0.06575823, -50.959457)
 
 [node name="PresentGreenRoundRoot" parent="Decorations/Presents" instance=ExtResource("40_hh3yc")]
-transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -14.368351, -0.008588195, -2.8390121)
+transform = Transform3D(5.142301, 0, 6.1283555, 0, 8, 0, -6.1283555, 0, 5.142301, -37.06835, 0.1914118, -48.739014)
 
 [node name="PresentRedCubeRoot" parent="Decorations/Presents" instance=ExtResource("41_2yyv0")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -26.847305, 0, -10.290184)
+transform = Transform3D(4.924039, 0, -0.8682409, 0, 5, 0, 0.8682409, 0, 4.924039, 80.7527, 2.5, -8.3901825)
 
 [node name="PresentRedRectangleRoot" parent="Decorations/Presents" instance=ExtResource("42_utan4")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -27.38118, 0, -18.27445)
+transform = Transform3D(4.330127, 0, 2.5, 0, 5, 0, -2.5, 0, 4.330127, 83.91882, 0, -9.874453)
 
 [node name="PresentRedRoundRoot" parent="Decorations/Presents" instance=ExtResource("43_an08g")]
-transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -29.697319, 0, -17.852526)
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 79.20268, 1, -79.152534)
+
+[node name="PresentRedCubeRoot2" parent="Decorations/Presents" instance=ExtResource("41_2yyv0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -32.6, 1.1, -46.6)
+
+[node name="PresentRedRectangleRoot2" parent="Decorations/Presents" instance=ExtResource("42_utan4")]
+transform = Transform3D(3.2139382, 0, 3.8302221, 0, 5, 0, -3.8302221, 0, 3.2139382, -29.899994, 0, -47.4)
+
+[node name="PresentGreenCubeRoot2" parent="Decorations/Presents" instance=ExtResource("38_v8jhy")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -32.699997, 0, -93.200005)
+
+[node name="PresentGreenRoundRoot2" parent="Decorations/Presents" instance=ExtResource("40_hh3yc")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -37.1, 1.3000001, -102.100006)
+
+[node name="PresentRedRectangleRoot3" parent="Decorations/Presents" instance=ExtResource("42_utan4")]
+transform = Transform3D(4.330127, 0, -2.5, 0, 5, 0, 2.5, 0, 4.330127, -35.800003, 0, -93.5)
+
+[node name="PresentRedRoundRoot2" parent="Decorations/Presents" instance=ExtResource("43_an08g")]
+transform = Transform3D(6.9282026, 0, 4, 0, 8, 0, -4, 0, 6.9282026, -28.099998, 0.5, -96.100006)
+
+[node name="PresentGreenRoundRoot3" parent="Decorations/Presents" instance=ExtResource("40_hh3yc")]
+transform = Transform3D(6.1283555, 0, -5.1423006, 0, 8, 0, 5.1423006, 0, 6.1283555, 75.7, 2, -15.6)
+
+[node name="PresentRedRectangleRoot4" parent="Decorations/Presents" instance=ExtResource("42_utan4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 76, 0, -11.9)
+
+[node name="PresentRedRoundRoot3" parent="Decorations/Presents" instance=ExtResource("43_an08g")]
+transform = Transform3D(7.517541, 0, -2.736161, 0, 8, 0, 2.736161, 0, 7.517541, 83.90001, 1.8999999, -17.699999)
+
+[node name="PresentGreenCubeRoot3" parent="Decorations/Presents" instance=ExtResource("38_v8jhy")]
+transform = Transform3D(4.924039, 0, 0.8682409, 0, 5, 0, -0.8682409, 0, 4.924039, 78.3, 0, -9.1)
+
+[node name="PresentGreenCubeRoot4" parent="Decorations/Presents" instance=ExtResource("38_v8jhy")]
+transform = Transform3D(4.330127, 0, -2.5, 0, 5, 0, 2.5, 0, 4.330127, 83.600006, 1.3000001, -73.600006)
+
+[node name="PresentGreenRectangleRoot2" parent="Decorations/Presents" instance=ExtResource("39_7nru2")]
+transform = Transform3D(4.698463, 0, 1.7101007, 0, 5, 0, -1.7101007, 0, 4.698463, 78.00001, 1.2, -75.1)
+
+[node name="PresentGreenRoundRoot4" parent="Decorations/Presents" instance=ExtResource("40_hh3yc")]
+transform = Transform3D(6.1283555, 0, -5.1423006, 0, 8, 0, 5.1423006, 0, 6.1283555, 89.100006, 1.2, -76.200005)
+
+[node name="PresentRedCubeRoot3" parent="Decorations/Presents" instance=ExtResource("41_2yyv0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 86.5, 1.5, -72.8)
+
+[node name="PresentRedRectangleRoot5" parent="Decorations/Presents" instance=ExtResource("42_utan4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 75.4, 1.2, -78.100006)
+
+[node name="PresentRedRoundRoot4" parent="Decorations/Presents" instance=ExtResource("43_an08g")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -29.300003, 2.3, -56)
+
+[node name="PresentRedRoundRoot5" parent="Decorations/Presents" instance=ExtResource("43_an08g")]
+transform = Transform3D(3.9999998, 0, 6.9282036, 0, 8, 0, -6.9282036, 0, 3.9999998, -33, 0.70000005, 34.5)
+
+[node name="PresentGreenRoundRoot5" parent="Decorations/Presents" instance=ExtResource("40_hh3yc")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -25.400002, 1.2, 27.7)
+
+[node name="PresentRedCubeRoot4" parent="Decorations/Presents" instance=ExtResource("41_2yyv0")]
+transform = Transform3D(1.7101008, 0, 4.698463, 0, 5, 0, -4.698463, 0, 1.7101008, -25.5, 0.79999995, 32)
+
+[node name="PresentRedRectangleRoot6" parent="Decorations/Presents" instance=ExtResource("42_utan4")]
+transform = Transform3D(3.2139382, 0, 3.8302221, 0, 5, 0, -3.8302221, 0, 3.2139382, -22.399998, 0.79999995, 31)
+
+[node name="PresentGreenRectangleRoot3" parent="Decorations/Presents" instance=ExtResource("39_7nru2")]
+transform = Transform3D(0.86824113, 0, -4.924039, 0, 5, 0, 4.924039, 0, 0.86824113, -28.099998, 0.70000005, 35.4)
+
+[node name="PresentGreenCubeRoot5" parent="Decorations/Presents" instance=ExtResource("38_v8jhy")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -25.5, 0.6, 34.7)
 
 [node name="GingerBreadPeople" type="Node3D" parent="Decorations"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2, 0, 0)
 
 [node name="GingerbreadManRoot" parent="Decorations/GingerBreadPeople" instance=ExtResource("44_80wnb")]
-transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -6.1000004, 0, 3.8000002)
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 54.899998, 1.4, -76.3)
 
 [node name="GingerBreadRoot" parent="Decorations/GingerBreadPeople" instance=ExtResource("45_ttctv")]
-transform = Transform3D(-1.9670124e-07, 4.4999995, -7.794229, -9, -3.934025e-07, 0, -3.4069657e-07, 7.794229, 4.4999995, -2.9000006, 1.2, 4.8)
+transform = Transform3D(-1.9670124e-07, 4.4999995, -7.794229, -9, -3.934025e-07, 0, -3.4069657e-07, 7.794229, 4.4999995, 58.1, 2.6, -75.3)
 
 [node name="GingerbreadWomanRoot" parent="Decorations/GingerBreadPeople" instance=ExtResource("46_gik33")]
-transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -0.5, 0, 4.8)
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 60.5, 1.3000001, -75.3)
+
+[node name="GingerbreadManRoot2" parent="Decorations/GingerBreadPeople" instance=ExtResource("44_80wnb")]
+transform = Transform3D(6.8944, 0, 5.785088, 0, 9, 0, -5.785088, 0, 6.8944, -18.400002, 1.6000001, -1.2000008)
+
+[node name="GingerbreadWomanRoot2" parent="Decorations/GingerBreadPeople" instance=ExtResource("46_gik33")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -16.400002, 1.8000002, -5.6000004)
+
+[node name="GingerBreadRoot2" parent="Decorations/GingerBreadPeople" instance=ExtResource("45_ttctv")]
+transform = Transform3D(-3.934025e-07, 9, 0, -9, -3.934025e-07, 0, 0, 0, 9, -16.7, 2.8000002, -2.7999992)
+
+[node name="GingerbreadManRoot3" parent="Decorations/GingerBreadPeople" instance=ExtResource("44_80wnb")]
+transform = Transform3D(5.7850885, 0, -6.8944, 0, 9, 0, 6.8944, 0, 5.7850885, 54.4, 2.3, 13.1)
+
+[node name="GingerbreadWomanRoot3" parent="Decorations/GingerBreadPeople" instance=ExtResource("46_gik33")]
+transform = Transform3D(1.562834, 0, -8.86327, 0, 9, 0, 8.86327, 0, 1.562834, 57.7, 2.2, 17)
+
+[node name="GingerBreadRoot3" parent="Decorations/GingerBreadPeople" instance=ExtResource("45_ttctv")]
+transform = Transform3D(-3.4069654e-07, 7.7942286, 4.5, -9, -3.934025e-07, 0, 1.9670125e-07, -4.5, 7.7942286, 55, 1.2, 16)
+
+[node name="GingerbreadManRoot4" parent="Decorations/GingerBreadPeople" instance=ExtResource("44_80wnb")]
+transform = Transform3D(1.5628335, 0, 8.86327, 0, 9, 0, -8.86327, 0, 1.5628335, -17.5, 2.2, -51.600006)
+
+[node name="GingerbreadWomanRoot4" parent="Decorations/GingerBreadPeople" instance=ExtResource("46_gik33")]
+transform = Transform3D(5.7850885, 0, 6.8943996, 0, 9, 0, -6.8943996, 0, 5.7850885, -16.600002, 2.3, -56)
+
+[node name="GingerBreadRoot4" parent="Decorations/GingerBreadPeople" instance=ExtResource("45_ttctv")]
+transform = Transform3D(-3.934025e-07, 9, 0, -9, -3.934025e-07, 0, 0, 0, 9, -14.5, 1.2, -52.100006)
+
+[node name="GingerBreadRoot5" parent="Decorations/GingerBreadPeople" instance=ExtResource("45_ttctv")]
+transform = Transform3D(-1.9670124e-07, 4.4999995, -7.794229, -9, -3.934025e-07, 0, -3.4069657e-07, 7.794229, 4.4999995, -12.099998, 3.1, -55.9)
+
+[node name="GingerbreadManRoot5" parent="Decorations/GingerBreadPeople" instance=ExtResource("44_80wnb")]
+transform = Transform3D(-7.794228, 0, 4.5, 0, 9, 0, -4.5, 0, -7.794228, -19.8, 0.3, 37.1)
+
+[node name="GingerBreadRoot6" parent="Decorations/GingerBreadPeople" instance=ExtResource("45_ttctv")]
+transform = Transform3D(-3.4069654e-07, 7.7942286, 4.5, -9, -3.934025e-07, 0, 1.9670125e-07, -4.5, 7.7942286, -23.400002, 1.6000001, 34.4)
+
+[node name="GingerbreadWomanRoot5" parent="Decorations/GingerBreadPeople" instance=ExtResource("46_gik33")]
+transform = Transform3D(-4.5000005, 0, 7.7942286, 0, 9, 0, -7.7942286, 0, -4.5000005, -23, 0.39999998, 38.1)
+
+[node name="GingerbreadWomanRoot6" parent="Decorations/GingerBreadPeople" instance=ExtResource("46_gik33")]
+transform = Transform3D(-5.7850885, 0, -6.8944, 0, 9, 0, 6.8944, 0, -5.7850885, -16.5, 0.39999998, 39.9)
+
+[node name="GingerbreadManRoot6" parent="Decorations/GingerBreadPeople" instance=ExtResource("44_80wnb")]
+transform = Transform3D(6.8944, 0, 5.785088, 0, 9, 0, -5.785088, 0, 6.8944, -9, 2.1000001, -71.700005)
+
+[node name="GingerbreadManRoot7" parent="Decorations/GingerBreadPeople" instance=ExtResource("44_80wnb")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -5.4000015, 2.2, -74)
+
+[node name="GingerBreadRoot7" parent="Decorations/GingerBreadPeople" instance=ExtResource("45_ttctv")]
+transform = Transform3D(-3.013638e-07, 6.8944, -5.785088, -9, -3.934025e-07, 0, -2.5287423e-07, 5.785088, 6.8944, -6, 1.2, -71.100006)
+
+[node name="GingerbreadWomanRoot7" parent="Decorations/GingerBreadPeople" instance=ExtResource("46_gik33")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0.80000114, 2.4, -73.9)
+
+[node name="GingerbreadWomanRoot8" parent="Decorations/GingerBreadPeople" instance=ExtResource("46_gik33")]
+transform = Transform3D(6.8944, 0, 5.785088, 0, 9, 0, -5.785088, 0, 6.8944, -10, 2.2, -65)
+
+[node name="GingerBreadRoot8" parent="Decorations/GingerBreadPeople" instance=ExtResource("45_ttctv")]
+transform = Transform3D(-3.934025e-07, 9, 0, -9, -3.934025e-07, 0, 0, 0, 9, -7.5999985, 3.2, -65.600006)
 
 [node name="HolidayCharacters" type="Node3D" parent="Decorations"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.299999, -0.5, 22.300001)
 
 [node name="NutcrackerRoot" parent="Decorations/HolidayCharacters" instance=ExtResource("47_hi3tj")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -21.021324, 0.49999976, -11.836912)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -26.621323, 1.9999998, -109.936905)
 
 [node name="ReindeerRoot" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -9.194484, 0.5, -10.107426)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -6.0944843, 2.6000001, -111.40744)
 
 [node name="SnowmanHatRoot" parent="Decorations/HolidayCharacters" instance=ExtResource("49_je7g0")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -6.5416, 0.49999976, -9.655069)
+transform = Transform3D(1.9283628, 0, -2.2981334, 0, 3, 0, 2.2981334, 0, 1.9283628, 63.4584, 2.6, -69.55507)
+
+[node name="NutcrackerRoot2" parent="Decorations/HolidayCharacters" instance=ExtResource("47_hi3tj")]
+transform = Transform3D(3.0641778, 0, 2.5711503, 0, 4, 0, -2.5711503, 0, 3.0641778, -46.3, 1.3, -82.7)
+
+[node name="NutcrackerRoot3" parent="Decorations/HolidayCharacters" instance=ExtResource("47_hi3tj")]
+transform = Transform3D(1.3680805, 0, 3.7587705, 0, 4, 0, -3.7587705, 0, 1.3680805, -19.5, 3, -48.9)
+
+[node name="SnowmanHatRoot2" parent="Decorations/HolidayCharacters" instance=ExtResource("49_je7g0")]
+transform = Transform3D(2.2981334, 0, 1.9283627, 0, 3, 0, -1.9283627, 0, 2.2981334, -39.300003, 1.5, -10.900002)
+
+[node name="ReindeerRoot2" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(1.9283628, 0, 2.2981334, 0, 3, 0, -2.2981334, 0, 1.9283628, -14.300003, 2.4, -11.400002)
+
+[node name="ReindeerRoot3" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, -17.5, 2, -3.2000008)
+
+[node name="SnowmanHatRoot3" parent="Decorations/HolidayCharacters" instance=ExtResource("49_je7g0")]
+transform = Transform3D(1.4999999, 0, 2.5980763, 0, 3, 0, -2.5980763, 0, 1.4999999, -8.800003, 2.4, -34.2)
+
+[node name="SnowmanHatRoot4" parent="Decorations/HolidayCharacters" instance=ExtResource("49_je7g0")]
+transform = Transform3D(2.598076, 0, -1.5, 0, 3, 0, 1.5, 0, 2.598076, 58.4, 2.7, -13.1)
+
+[node name="SnowmanHatRoot5" parent="Decorations/HolidayCharacters" instance=ExtResource("49_je7g0")]
+transform = Transform3D(1.0260605, 0, -2.819078, 0, 3, 0, 2.819078, 0, 1.0260605, 77.2, 1.2, 8.599999)
+
+[node name="ReindeerRoot4" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(-1.9283628, 0, 2.2981334, 0, 3, 0, -2.2981334, 0, -1.9283628, 15.499999, 1.5, 5.8999996)
+
+[node name="ReindeerRoot5" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(-0.5209446, 0, -2.9544232, 0, 3, 0, 2.9544232, 0, -0.5209446, 36.2, 2.2, 5.5999994)
+
+[node name="ReindeerRoot6" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(1.9283628, 0, -2.2981334, 0, 3, 0, 2.2981334, 0, 1.9283628, 49, 3, -41.300003)
+
+[node name="ReindeerRoot7" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(2.6490667, 1.0260603, -0.9641813, -0.9641815, 2.8190782, 0.3509333, 1.0260603, 0, 2.819078, 73.5, 2.3, -2.800001)
+
+[node name="ReindeerRoot8" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(2.2981334, 0, -1.9283627, 0, 3, 0, 1.9283627, 0, 2.2981334, 50.6, 2.9, -45.4)
+
+[node name="ReindeerRoot9" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(1.9283626, 2.7923994e-08, -2.2981334, -0.39906645, 2.9544234, -0.33485654, 2.26322, 0.5209447, 1.8990668, 75.4, 1.9, -1.8000007)
+
+[node name="ReindeerRoot10" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(1.0260605, 0, -2.819078, -0.4895278, 2.9544234, -0.17817354, 2.77625, 0.52094454, 1.0104723, 75.2, 1.7, 1.6999989)
+
+[node name="ReindeerRoot11" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(0.52094465, 0, -2.9544232, 0, 3, 0, 2.9544232, 0, 0.52094465, 73.7, 1.7, 4.299999)
+
+[node name="NutcrackerRoot4" parent="Decorations/HolidayCharacters" instance=ExtResource("47_hi3tj")]
+transform = Transform3D(3.7587705, 0, -1.3680805, 0, 4, 0, 1.3680805, 0, 3.7587705, 73.5, 2.9, -34.800003)
+
+[node name="NutcrackerRoot5" parent="Decorations/HolidayCharacters" instance=ExtResource("47_hi3tj")]
+transform = Transform3D(3.4641016, 0, -2, 0, 4, 0, 2, 0, 3.4641016, 78.1, 1, -103.2)
+
+[node name="NutcrackerRoot6" parent="Decorations/HolidayCharacters" instance=ExtResource("47_hi3tj")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 47.699997, 2, -111.8)
+
+[node name="ReindeerRoot12" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(2.598076, 0, -1.5, 0, 3, 0, 1.5, 0, 2.598076, 57.2, 1.7, -96.5)
+
+[node name="ReindeerRoot13" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(2.2981334, 0, 1.9283627, 0, 3, 0, -1.9283627, 0, 2.2981334, 22.199999, 1.8, -114.40001)
+
+[node name="ReindeerRoot14" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(1.4999999, 0, -2.5980763, 0, 3, 0, 2.5980763, 0, 1.4999999, 81.6, 2.1, -77.8)
+
+[node name="SnowmanHatRoot6" parent="Decorations/HolidayCharacters" instance=ExtResource("49_je7g0")]
+transform = Transform3D(2.819078, 0, -1.0260603, 0, 3, 0, 1.0260603, 0, 2.819078, 61.6, 1.8000001, -84.2)
+
+[node name="SnowmanHatRoot7" parent="Decorations/HolidayCharacters" instance=ExtResource("49_je7g0")]
+transform = Transform3D(2.2981334, 0, 1.9283627, 0, 3, 0, -1.9283627, 0, 2.2981334, 0.69999886, 2.2, -113.7)
+
+[node name="ReindeerRoot15" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(2.819078, 0, -1.0260603, 0, 3, 0, 1.0260603, 0, 2.819078, 73.7, 2.2, -119.2)
+
+[node name="ReindeerRoot16" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(2.819078, 0, 1.0260603, 0, 3, 0, -1.0260603, 0, 2.819078, 86.6, 1.3, -108.40001)
+
+[node name="ReindeerRoot17" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(2.598076, 0, -1.5, 0, 3, 0, 1.5, 0, 2.598076, 69.7, 3.4, -59.7)
+
+[node name="ReindeerRoot18" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(-1.0260603, 0, -2.819078, 0, 3, 0, 2.819078, 0, -1.0260603, 74.7, 2.3000002, -19)
+
+[node name="SnowmanHatRoot8" parent="Decorations/HolidayCharacters" instance=ExtResource("49_je7g0")]
+transform = Transform3D(2.2981334, 0, 1.9283627, 0, 3, 0, -1.9283627, 0, 2.2981334, -18.900002, 2.3000002, -75.2)
+
+[node name="NutcrackerRoot7" parent="Decorations/HolidayCharacters" instance=ExtResource("47_hi3tj")]
+transform = Transform3D(1.9999999, 0, 3.4641018, 0, 4, 0, -3.4641018, 0, 1.9999999, -34.300003, 1.1, 11.4)
+
+[node name="ReindeerRoot19" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(1.9283628, 0, 2.2981334, 0, 3, 0, -2.2981334, 0, 1.9283628, -41.500004, 1.4000001, -16.7)
+
+[node name="ReindeerRoot20" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(1.4999999, 0, 2.5980763, 0, 3, 0, -2.5980763, 0, 1.4999999, -43.2, 1.3, -9.300001)
+
+[node name="ReindeerRoot21" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(1.0260605, 0, 2.819078, 0, 3, 0, -2.819078, 0, 1.0260605, -30.600002, 3.3, -3.5000007)
+
+[node name="ReindeerRoot22" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(1.4999999, 0, 2.5980763, 0, 3, 0, -2.5980763, 0, 1.4999999, -47.400005, 1.1, -80.100006)
+
+[node name="ReindeerRoot23" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(1.9283628, 0, 2.2981334, 0, 3, 0, -2.2981334, 0, 1.9283628, -45.400005, 2.1, -104.100006)
+
+[node name="ReindeerRoot24" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(-0.5209446, 0, 2.9544232, 0, 3, 0, -2.9544232, 0, -0.5209446, -45.400005, 1.3, -98.8)
+
+[node name="ReindeerRoot25" parent="Decorations/HolidayCharacters" instance=ExtResource("48_sp5li")]
+transform = Transform3D(2.2981334, 0, -1.9283627, 0, 3, 0, 1.9283627, 0, 2.2981334, -41.2, 2, -100.40001)
+
+[node name="SnowmanHatRoot9" parent="Decorations/HolidayCharacters" instance=ExtResource("49_je7g0")]
+transform = Transform3D(1.4999999, 0, 2.5980763, 0, 3, 0, -2.5980763, 0, 1.4999999, -38.300003, 2.2, -91.5)
+
+[node name="NutcrackerRoot8" parent="Decorations/HolidayCharacters" instance=ExtResource("47_hi3tj")]
+transform = Transform3D(-1.3680805, 0, -3.7587705, 0, 4, 0, 3.7587705, 0, -1.3680805, 65, 1.7, 12.6)
