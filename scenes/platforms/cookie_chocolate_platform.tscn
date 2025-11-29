@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://7s45kqxxuvsg"]
 
-[ext_resource type="PackedScene" uid="uid://dnk6godxqkoj2" path="res://assets/models/FoodKit/cookie-chocolate.glb" id="1_ftyfa"]
+[ext_resource type="PackedScene" uid="uid://dicinx8dxuq3s" path="res://assets/models/FoodKit/cookie-chocolate.glb" id="1_ftyfa"]
 [ext_resource type="Script" uid="uid://dqmpi7iorexoh" path="res://scenes/platforms/scripts/cookie_platform.gd" id="2_lpw7e"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ftyfa"]
-height = 0.06567383
-radius = 0.06982422
+height = 0.0656738
+radius = 0.0698242
 
 [node name="CookieChocolatePlatformRoot" type="Node3D"]
 transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0, 0, 0)
@@ -14,7 +14,7 @@ transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0, 0, 0)
 script = ExtResource("2_lpw7e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.032592773, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0325928, 0)
 shape = SubResource("CylinderShape3D_ftyfa")
 
 [node name="cookie-chocolate2" parent="AnimatableBody3D" instance=ExtResource("1_ftyfa")]
