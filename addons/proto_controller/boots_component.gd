@@ -1,9 +1,9 @@
 extends Node
 
 @onready var proto_controller: Player = $".."
-@export @onready var Button_0: Button = $"../Button_0"
-@export @onready var Button_2: Button = $"../Button_1"
-@export @onready var Button_1: Button = $"../Button_1"
+@export @onready var Button_0: TextureButton = $"../Button_0"
+@export @onready var Button_2: TextureButton = $"../Button_1"
+@export @onready var Button_1: TextureButton = $"../Button_1"
 
 
 # Called when the node enters the scene tree for the first time.

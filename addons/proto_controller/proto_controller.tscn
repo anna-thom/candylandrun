@@ -1,7 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs72ogkvdd7d6"]
+[gd_scene load_steps=18 format=3 uid="uid://bs72ogkvdd7d6"]
 
 [ext_resource type="Script" uid="uid://cmihbc6jrfewp" path="res://addons/proto_controller/proto_controller.gd" id="1_ucva2"]
 [ext_resource type="Script" uid="uid://dfv437lkwvdqi" path="res://addons/proto_controller/boots_component.gd" id="2_wr06p"]
+[ext_resource type="Texture2D" uid="uid://be6bo2jwhs517" path="res://noboots.png" id="3_1tksx"]
+[ext_resource type="Texture2D" uid="uid://tyfk0y8rb5c8" path="res://Antigraviry boots.png" id="3_6dqce"]
+[ext_resource type="Texture2D" uid="uid://hdr2ipaoivuk" path="res://Antigravity Boots Brightness.png" id="4_0rk7u"]
+[ext_resource type="Texture2D" uid="uid://b1d4hg663j8w2" path="res://nobootsBrightness.png" id="4_ths8c"]
+[ext_resource type="Texture2D" uid="uid://xdi54j5mxchf" path="res://speedboots.png" id="5_0rk7u"]
+[ext_resource type="Texture2D" uid="uid://xgo6qmuq5xqb" path="res://speedboots brightness.png" id="6_h60nn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]
 albedo_color = Color(0.91806, 0.575202, 0.222449, 1)
@@ -13,6 +19,25 @@ height = 1.8
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iof21"]
 radius = 0.4
 height = 1.8
+
+[sub_resource type="InputEventAction" id="InputEventAction_1tksx"]
+action = &"Boots_0"
+
+[sub_resource type="Shortcut" id="Shortcut_ths8c"]
+events = [SubResource("InputEventAction_1tksx")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_6dqce"]
+action = &"Boots_1"
+
+[sub_resource type="Shortcut" id="Shortcut_0rk7u"]
+events = [SubResource("InputEventAction_6dqce")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_0rk7u"]
+action = &"Boots_2"
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_h60nn"]
+events = [SubResource("InputEventAction_0rk7u")]
 
 [node name="ProtoController" type="CharacterBody3D"]
 script = ExtResource("1_ucva2")
@@ -36,21 +61,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 
-[node name="Button_0" type="Button" parent="."]
+[node name="Button_0" type="TextureButton" parent="."]
 offset_left = 31.0
 offset_top = 92.0
 offset_right = 167.0
 offset_bottom = 227.0
+shortcut = SubResource("Shortcut_ths8c")
+texture_normal = ExtResource("3_1tksx")
+texture_pressed = ExtResource("4_ths8c")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="Button_1" type="Button" parent="."]
-offset_left = 873.0
-offset_top = 91.0
-offset_right = 1139.0
-offset_bottom = 242.0
+[node name="Button_1" type="TextureButton" parent="."]
+offset_left = 184.0
+offset_top = 92.0
+offset_right = 323.0
+offset_bottom = 231.0
+shortcut = SubResource("Shortcut_0rk7u")
+texture_normal = ExtResource("3_6dqce")
+texture_pressed = ExtResource("4_0rk7u")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="Button_2" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="Button_2" type="TextureButton" parent="."]
+offset_left = 350.0
+offset_top = 94.0
+offset_right = 482.0
+offset_bottom = 232.0
+shortcut = SubResource("Shortcut_h60nn")
+texture_normal = ExtResource("5_0rk7u")
+texture_pressed = ExtResource("6_h60nn")
+ignore_texture_size = true
+stretch_mode = 0
 
 [connection signal="pressed" from="Button_0" to="BootsComponent" method="_on_button_0_pressed"]
 [connection signal="pressed" from="Button_1" to="BootsComponent" method="_on_button_1_pressed"]
