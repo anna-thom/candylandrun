@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://cmihbc6jrfewp" path="res://addons/proto_controller/proto_controller.gd" id="1_ucva2"]
 [ext_resource type="Script" uid="uid://dfv437lkwvdqi" path="res://addons/proto_controller/boots_component.gd" id="2_wr06p"]
 [ext_resource type="Texture2D" uid="uid://be6bo2jwhs517" path="res://noboots.png" id="3_1tksx"]
-[ext_resource type="Texture2D" uid="uid://tyfk0y8rb5c8" path="res://Antigraviry boots.png" id="3_6dqce"]
-[ext_resource type="Texture2D" uid="uid://hdr2ipaoivuk" path="res://Antigravity Boots Brightness.png" id="4_0rk7u"]
+[ext_resource type="Texture2D" uid="uid://vsi6hb7p6ixx" path="res://Antigraviry boots.png" id="3_6dqce"]
+[ext_resource type="Texture2D" uid="uid://brxax5ueiaaw8" path="res://Antigravity Boots Brightness.png" id="4_0rk7u"]
 [ext_resource type="Texture2D" uid="uid://b1d4hg663j8w2" path="res://nobootsBrightness.png" id="4_ths8c"]
-[ext_resource type="Texture2D" uid="uid://xdi54j5mxchf" path="res://speedboots.png" id="5_0rk7u"]
+[ext_resource type="Texture2D" uid="uid://0isd0wn17xuv" path="res://speedboots.png" id="5_0rk7u"]
 [ext_resource type="Texture2D" uid="uid://xgo6qmuq5xqb" path="res://speedboots brightness.png" id="6_h60nn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]
@@ -62,10 +62,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 [node name="Camera3D" type="Camera3D" parent="Head"]
 
 [node name="Button_0" type="TextureButton" parent="."]
-offset_left = 31.0
-offset_top = 92.0
-offset_right = 167.0
-offset_bottom = 227.0
+offset_left = 20.0
+offset_top = 25.0
+offset_right = 156.0
+offset_bottom = 160.0
+focus_mode = 0
 shortcut = SubResource("Shortcut_ths8c")
 texture_normal = ExtResource("3_1tksx")
 texture_pressed = ExtResource("4_ths8c")
@@ -73,10 +74,11 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Button_1" type="TextureButton" parent="."]
-offset_left = 184.0
-offset_top = 92.0
-offset_right = 323.0
-offset_bottom = 231.0
+offset_left = 173.0
+offset_top = 25.0
+offset_right = 312.0
+offset_bottom = 164.0
+focus_mode = 0
 shortcut = SubResource("Shortcut_0rk7u")
 texture_normal = ExtResource("3_6dqce")
 texture_pressed = ExtResource("4_0rk7u")
@@ -84,10 +86,11 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Button_2" type="TextureButton" parent="."]
-offset_left = 350.0
-offset_top = 94.0
-offset_right = 482.0
-offset_bottom = 232.0
+offset_left = 339.0
+offset_top = 27.0
+offset_right = 471.0
+offset_bottom = 165.0
+focus_mode = 0
 shortcut = SubResource("Shortcut_h60nn")
 texture_normal = ExtResource("5_0rk7u")
 texture_pressed = ExtResource("6_h60nn")
