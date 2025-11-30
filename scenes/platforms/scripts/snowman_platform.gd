@@ -1,7 +1,10 @@
 extends Node3D
 
-@export var rotation_speed: float = 90.0  # degrees per second
+@export var rotation_speed: float = 30.0  # degrees per second
 
-func _process(delta):
-	# Rotate around X-axis
-	rotate_y(deg_to_rad(rotation_speed) * delta)
+var _angle := 0.0
+
+func _process(delta: float) -> void:
+	_angle += rotation_speed * delta
+	_angle = fmod(_angle, 360.0)
+	rotation_degrees.y = _angle

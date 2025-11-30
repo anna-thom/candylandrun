@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://cmihbc6jrfewp" path="res://addons/proto_controller/proto_controller.gd" id="1_ucva2"]
 [ext_resource type="Script" uid="uid://dfv437lkwvdqi" path="res://addons/proto_controller/boots_component.gd" id="2_wr06p"]
-[ext_resource type="Texture2D" uid="uid://be6bo2jwhs517" path="res://noboots.png" id="3_1tksx"]
-[ext_resource type="Texture2D" uid="uid://vsi6hb7p6ixx" path="res://Antigraviry boots.png" id="3_6dqce"]
-[ext_resource type="Texture2D" uid="uid://brxax5ueiaaw8" path="res://Antigravity Boots Brightness.png" id="4_0rk7u"]
-[ext_resource type="Texture2D" uid="uid://b1d4hg663j8w2" path="res://nobootsBrightness.png" id="4_ths8c"]
-[ext_resource type="Texture2D" uid="uid://0isd0wn17xuv" path="res://speedboots.png" id="5_0rk7u"]
-[ext_resource type="Texture2D" uid="uid://xgo6qmuq5xqb" path="res://speedboots brightness.png" id="6_h60nn"]
+[ext_resource type="Texture2D" uid="uid://be6bo2jwhs517" path="res://scenes/systems/noboots.png" id="3_1tksx"]
+[ext_resource type="Texture2D" uid="uid://vsi6hb7p6ixx" path="res://scenes/systems/Antigraviry boots.png" id="3_6dqce"]
+[ext_resource type="Texture2D" uid="uid://brxax5ueiaaw8" path="res://scenes/systems/Antigravity Boots Brightness.png" id="4_0rk7u"]
+[ext_resource type="Texture2D" uid="uid://b1d4hg663j8w2" path="res://scenes/systems/nobootsBrightness.png" id="4_ths8c"]
+[ext_resource type="Texture2D" uid="uid://0isd0wn17xuv" path="res://scenes/systems/speedboots.png" id="5_0rk7u"]
+[ext_resource type="Texture2D" uid="uid://xgo6qmuq5xqb" path="res://scenes/systems/speedboots brightness.png" id="6_h60nn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]
 albedo_color = Color(0.91806, 0.575202, 0.222449, 1)
@@ -40,6 +40,7 @@ pressed = true
 events = [SubResource("InputEventAction_0rk7u")]
 
 [node name="ProtoController" type="CharacterBody3D"]
+floor_max_angle = 0.5235988
 script = ExtResource("1_ucva2")
 can_sprint = true
 

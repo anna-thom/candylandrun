@@ -1,1 +1,0 @@
-extends CSGCylinder3D

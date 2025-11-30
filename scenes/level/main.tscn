@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_c2p6q"]
 [ext_resource type="Script" uid="uid://88nx8yye31ob" path="res://addons/zylann.hterrain/hterrain.gd" id="1_vly3c"]
-[ext_resource type="Resource" path="res://addons/zylann.hterrain/data.hterrain" id="2_ex312"]
+[ext_resource type="Resource" uid="uid://dennxxac0iu7w" path="res://addons/zylann.hterrain/data.hterrain" id="2_ex312"]
 [ext_resource type="PackedScene" uid="uid://ckwww5wcyeyd2" path="res://scenes/props/candy_corn.tscn" id="2_wpcwq"]
 [ext_resource type="PackedScene" uid="uid://cccn5a6xtgdpy" path="res://scenes/platforms/cake_platform.tscn" id="3_1cico"]
 [ext_resource type="Script" uid="uid://bxcci3gaqnku1" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_ax18d"]
@@ -57,8 +57,10 @@ mode = 0
 textures = [[], []]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+sky_top_color = Color(0.27221364, 0.5513761, 0.81411946, 1)
+sky_horizon_color = Color(0.88085914, 0.9108177, 0.9583563, 1)
+ground_bottom_color = Color(0.8117647, 0.8509804, 1, 1)
+ground_horizon_color = Color(0.88235295, 0.9098039, 0.95686275, 1)
 
 [sub_resource type="Sky" id="Sky_ig7tw"]
 sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
@@ -67,12 +69,13 @@ sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
 background_mode = 2
 sky = SubResource("Sky_ig7tw")
 tonemap_mode = 2
-glow_enabled = true
 fog_enabled = true
-fog_light_color = Color(0.81700003, 0.86576664, 0.95, 1)
+fog_light_color = Color(0.6497, 0.741815, 0.89, 1)
 fog_sun_scatter = 0.5
 fog_density = 0.001
 fog_sky_affect = 0.7
+fog_depth_begin = 80.0
+fog_depth_end = 160.0
 
 [sub_resource type="Gradient" id="Gradient_1cico"]
 offsets = PackedFloat32Array(0, 0.49659863, 1)
@@ -173,7 +176,6 @@ size = Vector3(150, 1, 150)
 
 [node name="ProtoController" parent="." instance=ExtResource("1_c2p6q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6, 2)
-can_freefly = true
 jump_velocity = 10.0
 sprint_speed = 20.0
 input_left = "move_left"
@@ -320,35 +322,40 @@ transform = Transform3D(5.9088464, 0, 1.0418891, 0, 6, 0, -1.0418891, 0, 5.90884
 [node name="DonutChocolatePlatform2" parent="DonutLiftPlatforms" instance=ExtResource("24_okvrl")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 4.825, 1, -2.7750006)
 
-[node name="SeeSawPlatforms" type="Node3D" parent="."]
+[node name="ChocolateAndWafflePlatforms" type="Node3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -1.8, 11.000001, -24.9)
 
-[node name="WafflePlatform" parent="SeeSawPlatforms" instance=ExtResource("25_u5fym")]
-transform = Transform3D(3.9392304, 0, 0.69459265, 0, 4, 0, -0.69459265, 0, 3.9392304, 4.550001, 3.125, -9.650001)
+[node name="WafflePlatforms" type="Node3D" parent="ChocolateAndWafflePlatforms"]
+transform = Transform3D(3.9392304, 0, 0.69459265, 0, 4, 0, -0.69459265, 0, 3.9392304, 4.550001, 3.1249998, -9.65)
 
-[node name="ChocolatePlatform" parent="SeeSawPlatforms" instance=ExtResource("26_bnahf")]
-transform = Transform3D(2.226681, 1.2855749, -3.064177, -1.9999998, 3.464101, -4.073701e-08, 2.6536546, 1.5320885, 2.57115, 4.000001, 3.5749998, -10.85)
+[node name="WafflePlatform" parent="ChocolateAndWafflePlatforms/WafflePlatforms" instance=ExtResource("25_u5fym")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
 
-[node name="WafflePlatform2" parent="SeeSawPlatforms" instance=ExtResource("25_u5fym")]
-transform = Transform3D(1.3680804, 0, 3.7587702, 0, 4, 0, -3.7587702, 0, 1.3680804, 2.825, 3.775, -11.799998)
+[node name="WafflePlatform2" parent="ChocolateAndWafflePlatforms/WafflePlatforms" instance=ExtResource("25_u5fym")]
+transform = Transform3D(0.50000006, 0, 0.8660255, 0, 1, 0, -0.8660255, 0, 0.50000006, -0.33136284, 0.16250014, -0.6042197)
 
-[node name="ChocolatePlatform2" parent="SeeSawPlatforms" instance=ExtResource("26_bnahf")]
-transform = Transform3D(3.4114738, 1.9696151, -0.6945929, -1.9999998, 3.4641016, -8.20044e-08, 0.60153466, 0.34729636, 3.9392307, 1.65, 4.225, -12.075001)
+[node name="WafflePlatform3" parent="ChocolateAndWafflePlatforms/WafflePlatforms" instance=ExtResource("25_u5fym")]
+transform = Transform3D(0.9848079, 0, 0.17364824, 0, 1, 0, -0.17364824, 0, 0.9848079, -1.5677993, 0.4937501, -0.7905052)
 
-[node name="WafflePlatform3" parent="SeeSawPlatforms" instance=ExtResource("25_u5fym")]
-transform = Transform3D(3.7587702, 0, 1.3680806, 0, 4, 0, -1.3680806, 0, 3.7587702, -2.175, 5.1, -11.675)
+[node name="WafflePlatform4" parent="ChocolateAndWafflePlatforms/WafflePlatforms" instance=ExtResource("25_u5fym")]
+transform = Transform3D(0.98480797, 0, -0.17364816, 0, 1, 0, 0.17364816, 0, 0.98480797, -0.9273324, 0.32500005, -0.8235409)
 
-[node name="ChocolatePlatform3" parent="SeeSawPlatforms" instance=ExtResource("26_bnahf")]
-transform = Transform3D(3.4114738, 1.9696153, 0.6945927, -2, 3.4641016, -7.985502e-09, -0.60153496, -0.3472963, 3.9392304, -0.92499995, 4.9249997, -12.025001)
+[node name="WafflePlatform5" parent="ChocolateAndWafflePlatforms/WafflePlatforms" instance=ExtResource("25_u5fym")]
+transform = Transform3D(0.9396928, 0, -0.3420202, 0, 1, 0, 0.3420202, 0, 0.9396928, -1.492763, 0.65000033, -0.13628602)
 
-[node name="WafflePlatform4" parent="SeeSawPlatforms" instance=ExtResource("25_u5fym")]
-transform = Transform3D(4, 0, 2.3841858e-07, 0, 4, 0, -2.3841858e-07, 0, 4, 0.32499993, 4.425, -12.249999)
+[node name="ChocolatePlatforms" type="Node3D" parent="ChocolateAndWafflePlatforms"]
 
-[node name="ChocolatePlatform4" parent="SeeSawPlatforms" instance=ExtResource("26_bnahf")]
-transform = Transform3D(-0.9315655, -0.53783965, 3.8526502, -1.9999995, 3.4641008, 1.2152441e-07, -3.336493, -1.9263252, -1.0756791, -1.9999995, 5.7000003, -10.525001)
+[node name="ChocolatePlatform" parent="ChocolateAndWafflePlatforms/ChocolatePlatforms" instance=ExtResource("26_bnahf")]
+transform = Transform3D(2.5711496, 0, -3.0641773, 0, 3.9999993, 0, 3.0641766, 0, 2.57115, 4.000001, 3.5749996, -10.85)
 
-[node name="WafflePlatform5" parent="SeeSawPlatforms" instance=ExtResource("25_u5fym")]
-transform = Transform3D(3.939231, 0, -0.6945927, 0, 4, 0, 0.6945927, 0, 3.939231, -1.4249997, 5.725001, -9.150001)
+[node name="ChocolatePlatform2" parent="ChocolateAndWafflePlatforms/ChocolatePlatforms" instance=ExtResource("26_bnahf")]
+transform = Transform3D(3.9392304, 0, -0.69459265, 0, 3.9999998, 0, 0.69459265, 0, 3.9392304, 1.6500001, 4.2250004, -12.075001)
+
+[node name="ChocolatePlatform3" parent="ChocolateAndWafflePlatforms/ChocolatePlatforms" instance=ExtResource("26_bnahf")]
+transform = Transform3D(3.9392304, 0, 0.6945926, 0, 4, 0, -0.69459265, 0, 3.9392302, -0.925, 4.925, -12.025)
+
+[node name="ChocolatePlatform4" parent="ChocolateAndWafflePlatforms/ChocolatePlatforms" instance=ExtResource("26_bnahf")]
+transform = Transform3D(-1.075679, 0, 3.8526502, 0, 3.9999993, 0, -3.8526502, 0, -1.075679, -1.9999995, 5.700001, -10.525)
 
 [node name="Decorations" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.5, -15.6)

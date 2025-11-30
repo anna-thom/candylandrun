@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cccn5a6xtgdpy"]
 
-[ext_resource type="PackedScene" uid="uid://ccn3m5buqfopu" path="res://assets/models/FoodKit/cake.glb" id="1_kw3xe"]
+[ext_resource type="PackedScene" uid="uid://cr2564npqltqe" path="res://assets/models/FoodKit/cake.glb" id="1_kw3xe"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_3putg"]
 height = 0.240137

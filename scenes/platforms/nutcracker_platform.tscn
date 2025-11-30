@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c7args2qt0f8v"]
 
-[ext_resource type="PackedScene" uid="uid://cwn31bty31v4f" path="res://assets/models/HolidayKit/nutcracker.glb" id="1_jcacb"]
+[ext_resource type="PackedScene" uid="uid://cy0xh8wpqjong" path="res://assets/models/HolidayKit/nutcracker.glb" id="1_jcacb"]
 [ext_resource type="Script" uid="uid://ddtqwcno71uah" path="res://scenes/platforms/scripts/nutcracker_platform.gd" id="1_kteil"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jcacb"]
@@ -8,11 +8,11 @@ data = PackedVector3Array(0.0849, 0.261, 0.0849, 0.12, 0.261, 0, 0.0849, 0.261, 
 
 [node name="NutcrackerPlatformRoot" type="Node3D"]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
 script = ExtResource("1_kteil")
 
-[node name="nutcracker2" parent="." instance=ExtResource("1_jcacb")]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
 shape = SubResource("ConcavePolygonShape3D_jcacb")
+
+[node name="nutcracker2" parent="AnimatableBody3D" instance=ExtResource("1_jcacb")]

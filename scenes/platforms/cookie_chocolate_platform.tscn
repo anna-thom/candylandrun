@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://7s45kqxxuvsg"]
 
-[ext_resource type="PackedScene" uid="uid://dicinx8dxuq3s" path="res://assets/models/FoodKit/cookie-chocolate.glb" id="1_ftyfa"]
+[ext_resource type="PackedScene" uid="uid://dnk6godxqkoj2" path="res://assets/models/FoodKit/cookie-chocolate.glb" id="1_ftyfa"]
 [ext_resource type="Script" uid="uid://dqmpi7iorexoh" path="res://scenes/platforms/scripts/cookie_platform.gd" id="2_lpw7e"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ftyfa"]
